@@ -70,12 +70,9 @@ strlenLoop:
 
   incq %rcx
   incl %edi
-  write $string, $lenString
   jmp strlenLoop
 strlenEnd:
   
-  write $delimiter, $lenDelimiter
-
 #### conversion to string ####
   movq $outNumber, %rsi   # hazim si alokovanou pamet do rsi
   movq %rcx, %rax         # hodim si citac do rax
@@ -103,7 +100,8 @@ conversionEndCheck:
 
 poppingStart:
   popq %rdx                 # popnu si znak
-  movq %rdx, (%rcx, %rsi)   # nacpu ho do pameti
+  movq %rdx, (%rsi)         # nacpu ho do pameti
+  incq %rsi
   loop poppingStart         # opakuju dokud neni rcx 0
   
 
