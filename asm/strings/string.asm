@@ -4,7 +4,7 @@
     lenString = . - string
   
   delimiter:
-    .ascii "**********\n"
+    .ascii "\n"
     lenDelimiter = . - delimiter
 
 .section .bss
@@ -76,25 +76,40 @@ strlenEnd:
   
   write $delimiter, $lenDelimiter
 
+#### conversion to string ####
   movq $outNumber, %rsi   # hazim si alokovanou pamet do rsi
   movq %rcx, %rax         # hodim si citac do rax
   xor %rcx, %rcx          # vycistim rcx, pouziju jako citac iteraci
+  xorq %rcx, %rcx         # hodim si index 0 do rcx
   movq $10, %rbx          # hodim si do rbx delitel: 10
 
 conversionStart:
   xorq %rdx, %rdx               # cistim rdx
   divq %rbx                     # a delim
   cmp $0, %rax                  # kontrola vysledku na nulu => posunul jsem se na konec
-  je conversionEnd              # skacu ven ze smycky
+  je conversionEndCheck         # skacu ven ze smycky
+
+conversionContinue:
   addq $0x30, %rdx              # zbytek v rdx, prictu 0x30 (to je 0) a hazim do pameti
-  movq %rdx, (%rcx,%rsi)        # hodim si char v rdx do pointru rsi s offsetem rcx
-  write $delimiter, $lenDelimiter
+  pushq %rdx                    # hodim si char na zasobnik
+  incq %rcx                     # posunu si citac a budouci offset
   jmp conversionStart 
-conversionEnd:
+
+conversionEndCheck:
+  cmp $0, %rdx                  # porovnavam zbytek na nulu
+  jne conversionContinue        # pokud tam neni nula, znamena to, ze musim jeste iterovat, a jedu znova
   
-  # vypiseme vysledek
-  write $outNumber, $64
+#### popping from stack to registers and memory ####
+
+poppingStart:
+  popq %rdx                 # popnu si znak
+  movq %rdx, (%rcx, %rsi)   # nacpu ho do pameti
+  loop poppingStart         # opakuju dokud neni rcx 0
   
+
+  
+  write $outNumber, $64             # vypiseme vysledek
+  write $delimiter, $lenDelimiter
 
   # ukoncovaci rutina
   _exit:
