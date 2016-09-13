@@ -8,7 +8,8 @@
     lenDelimiter = . - delimiter
 
 .section .bss
-  .lcomm outNumber 64 # vystupni cislo
+  .lcomm outNumber 64     # vystupni cislo
+  .lcomm inputString 128  # vstupni string
   
   # macro for write out
   # usage: write $string, $size
@@ -59,10 +60,12 @@
   .global _start
 
   _start:
-  
+#### read input string ####
+ read $inputString, $128 
+
 #### strlen ####
   xorq %rcx, %rcx
-  movl $string, %edi
+  movl $inputString, %edi
 
 strlenLoop:
   cmpb $10, (%edi)       # mam novy radek
