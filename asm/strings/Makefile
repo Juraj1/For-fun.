@@ -2,8 +2,8 @@ FILE=string
 
 do:
 	as -gstabs+ "${FILE}.asm" -o "${FILE}.o"
-	ld "${FILE}.o" -o strlen
+	ld "${FILE}.o" -o binary
 	rm "${FILE}.o"
 
 clean:
-	rm -rf strlen
+	rm -rf binary

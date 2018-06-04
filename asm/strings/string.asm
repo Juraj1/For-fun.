@@ -9,7 +9,7 @@
 
 .section .bss
   .lcomm outNumber 64     # vystupni cislo
-  .lcomm inputString 128  # vstupni string
+  .lcomm inputString 256  # vstupni string
   
   # macro for write out
   # usage: write $string, $size
@@ -90,7 +90,7 @@ conversionStart:
   je conversionEndCheck         # skacu ven ze smycky
 
 conversionContinue:
-  addq $0x30, %rdx              # zbytek v rdx, prictu 0x30 (to je 0) a hazim do pameti
+  addq $0x30, %rdx              # zbytek v rdx, prictu 0x30 (to je 0) a hazim do registru
   pushq %rdx                    # hodim si char na zasobnik
   incq %rcx                     # posunu si citac a budouci offset
   jmp conversionStart 
