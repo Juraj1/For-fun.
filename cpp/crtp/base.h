@@ -2,6 +2,7 @@
 #define BASE_H
 
 #include <iostream>
+
 template <typename T>
 class base {
   private:
@@ -9,11 +10,11 @@ class base {
 
     friend T;
 
-    T& implementation = static_cast<T&>(*this);
+    T* implementation = static_cast<T*>(this);
   public:
     auto do_stuff() {
         std::cout << "base dispatch" << std::endl;
-        return implementation.do_stuff();
+        return implementation->do_stuff();
     }
 };
 
