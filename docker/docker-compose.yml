@@ -1,0 +1,29 @@
+# Author:   Jiri Zahradnik
+# Date:     11.3.2022
+
+version: "3.8"
+services:
+  rabbitmq:
+    image: rabbitmq:3.8-management-alpine
+    container_name: 'rabbitmq'
+    environment:
+      RABBITMQ_DEFAULT_USER: john
+      RABBITMQ_DEFAULT_PASS: john
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes: # mount data to our local filesystem, so we can observe them
+      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+      - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+    networks:
+      - rabbitmq_network
+
+  redis:
+    image: "redis:alpine"
+    networks:
+      - rabbitmq_network
+
+networks:
+  rabbitmq_network:
+    driver: bridge
+      
