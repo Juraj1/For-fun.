@@ -1,0 +1,10 @@
+.idea
+binary
+Testing
+.ninja*
+build.ninja
+cmake-build-build-*
+*.cmake
+CMakeFiles
+.cmake
+CMakeCache.txt

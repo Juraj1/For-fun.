@@ -1,0 +1,24 @@
+.PHONY:libs
+
+CC=g++
+CFLAGS=-std=c++17
+LIBS=-L./lib
+LINK=-l:libimpl.a
+BINARY=binary
+INCLUDE=-I./iface
+
+all:${BINARY}
+
+${BINARY}:libs
+	@echo "Compiling $(BINARY)"; \
+	${CC} ${CFLAGS} ${INCLUDE} main.cpp ${LIBS} ${LINK} -o $@
+
+libs:
+	+$(MAKE) -C src
+
+clean:
+	+$(MAKE) -C src clean
+
+purge:
+	rm -rf ${BINARY}
+	+$(MAKE) -C src purge
