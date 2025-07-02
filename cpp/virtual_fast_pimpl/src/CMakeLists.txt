@@ -30,6 +30,8 @@ set_target_properties( impl
     LIBRARY_OUTPUT_DIRECTORY "../lib"
 )
 
+target_compile_options(impl PRIVATE "-O2" "-Werror")
+
 include_directories(
         include
         ../iface

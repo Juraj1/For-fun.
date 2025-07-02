@@ -8,7 +8,9 @@ include_directories(iface)
 SET( APP_EXE binary )
 
 ADD_EXECUTABLE( ${APP_EXE}
-                main.cpp ) 
+                main.cpp
+                MockIface.cpp
+)
 
 TARGET_LINK_LIBRARIES( ${APP_EXE}
                        impl )

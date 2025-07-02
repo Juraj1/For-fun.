@@ -1,5 +1,8 @@
 #include <memory>
 #include <new>
+#include <cstring>
+#include <iostream>
+
 #include "iface.h"
 #include "impl.h"
 
@@ -13,6 +16,15 @@ iface::iface() {
 
 }
 
+iface::iface(const iface &other) {
+  memcpy(storage, other.storage, STORAGE_SIZE);
+}
+
+iface::iface(iface &&other) noexcept {
+  memcpy(storage, other.storage, STORAGE_SIZE);
+  bzero(other.storage, STORAGE_SIZE);
+}
+
 iface::~iface() {
   std::destroy_at(GetImpl());
 }
@@ -24,3 +36,12 @@ void iface::testA() {
 void iface::testB() {
   GetImpl()->beforeTestB();
 }
+
+void iface::setA(int a) {
+  GetImpl()->setA(a);
+}
+
+void iface::setB(int b) {
+  GetImpl()->setB(b);
+}
+

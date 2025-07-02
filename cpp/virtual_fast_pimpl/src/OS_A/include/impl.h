@@ -5,11 +5,15 @@
 
 class iface::impl {
 public:
-  void beforeTestA();
-  void beforeTestB();
+  void beforeTestA() const;
+  void beforeTestB() const;
+  void printA() const;
+  void printB() const;
+  void setA(int a);
+  void setB(int b);
 private:
-  int A;
-  int B;
+  int A = 10;
+  int B = 20;
 };
 
 #endif // __IIMPL_H__

@@ -1,26 +1,30 @@
 #ifndef __IFACE_H__
 #define __IFACE_H__
 
+#ifdef OS_A
+#define STORAGE_SIZE 8
+#else
+#define STORAGE_SIZE 12
+#endif
+
 #include <cstddef>
 
 class iface {
 public:
   iface();
-  ~iface();
-  iface(const iface &other) = delete;
-  iface &operator=(const iface &other) = delete;
+  virtual ~iface();
 
-  void testA();
-  void testB();
+  iface(const iface &other);
+  iface(iface &&other) noexcept;
+
+  virtual void testA();
+  virtual void testB();
+  virtual void setA(int a);
+  virtual void setB(int b);
 
 protected:
   class impl;
-#ifdef OS_A
-  alignas(std::max_align_t) std::byte storage[8];
-#else
-  alignas(std::max_align_t) std::byte storage[12];
-#endif
-
+  alignas(std::max_align_t) std::byte storage[STORAGE_SIZE]{};
   impl *GetImpl();
 };
 
