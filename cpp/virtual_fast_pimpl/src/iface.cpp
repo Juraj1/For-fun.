@@ -13,7 +13,6 @@ iface::impl *iface::GetImpl() {
 iface::iface() {
   static_assert(sizeof(impl) <= sizeof(storage), "Implementation size greater than provided storage.");
   new (&storage) impl();
-
 }
 
 iface::iface(const iface &other) {
