@@ -14,8 +14,8 @@ public:
   iface();
   virtual ~iface();
 
-  iface(const iface &other);
-  iface(iface &&other) noexcept;
+  iface(const iface &other) = default;
+  iface(iface &&other) noexcept = default;
 
   virtual void testA();
   virtual void testB();
@@ -25,7 +25,9 @@ public:
 protected:
   class impl;
   alignas(std::max_align_t) std::byte storage[STORAGE_SIZE]{};
-  impl *GetImpl();
+  // using a helper call, not a pointer saves few bytes and frees us of problems with deep copying
+  // inlining helper function allows optimiser to get rid of the indirection
+  inline impl *GetImpl();
 };
 
 #endif // __IFACE_H__

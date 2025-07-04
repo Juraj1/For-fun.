@@ -6,22 +6,13 @@
 #include "iface.h"
 #include "impl.h"
 
-iface::impl *iface::GetImpl() {
+inline iface::impl *iface::GetImpl() {
   return std::launder(reinterpret_cast<iface::impl*>(&storage));
 }
 
 iface::iface() {
   static_assert(sizeof(impl) <= sizeof(storage), "Implementation size greater than provided storage.");
   new (&storage) impl();
-}
-
-iface::iface(const iface &other) {
-  memcpy(storage, other.storage, STORAGE_SIZE);
-}
-
-iface::iface(iface &&other) noexcept {
-  memcpy(storage, other.storage, STORAGE_SIZE);
-  bzero(other.storage, STORAGE_SIZE);
 }
 
 iface::~iface() {

@@ -3,13 +3,15 @@ project(virtual_fast_pimpl)
 
 add_subdirectory(src)
 
-include_directories(iface)
+include_directories(    iface
+                        mock
+)
 
-SET( APP_EXE binary )
+SET(APP_EXE binary)
 
 ADD_EXECUTABLE( ${APP_EXE}
                 main.cpp
-                MockIface.cpp
+                mock/MockIface.cpp
 )
 
 TARGET_LINK_LIBRARIES( ${APP_EXE}
