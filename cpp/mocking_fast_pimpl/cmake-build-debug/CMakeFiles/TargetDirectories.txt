@@ -1,0 +1,6 @@
+/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/cmake-build-debug/CMakeFiles/binary.dir
+/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/cmake-build-debug/src/CMakeFiles/impl.dir
+/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/cmake-build-debug/src/CMakeFiles/edit_cache.dir
+/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/cmake-build-debug/src/CMakeFiles/rebuild_cache.dir

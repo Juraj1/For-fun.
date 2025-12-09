@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../lib/libimpl.a CMakeFiles/impl.dir/IImpl.cpp.o CMakeFiles/impl.dir/impl.cpp.o
+/usr/bin/ranlib ../lib/libimpl.a

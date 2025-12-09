@@ -1,0 +1,1347 @@
+=cmd-param-changed,param="logging enabled",value="on"
+=cmd-param-changed,param="logging file",value="/tmp/gdb.txt"
+(gdb) 
+&"python import gdb; print(gdb.VERSION);\n"
+~"15.2\n"
+1^done
+(gdb) 
+2^done
+(gdb) 
+3^done
+(gdb) 
+4^done
+(gdb) 
+5^done
+(gdb) 
+6^done
+(gdb) 
+7^done
+(gdb) 
+8^done
+(gdb) 
+9^done
+(gdb) 
+10^done
+(gdb) 
+11^done
+(gdb) 
+12^done,value="off"
+(gdb) 
+&"handle SIGSTOP stop nopass\n"
+~"Signal        Stop\tPrint\tPass to program\tDescription\n"
+~"SIGSTOP       Yes\tYes\tNo\t\tStopped (signal)\n"
+13^done
+(gdb) 
+&"info pretty-printer\n"
+~"global pretty-printers:\n"
+~"  builtin\n"
+~"    mpx_bound128\n"
+14^done
+(gdb) 
+&"python import sys; sys.dont_write_bytecode = True; sys.path.insert(0, \"/opt/clion/clion-2024.3.4/bin/gdb/renderers\"); from default.printers import register_default_printers; register_default_printers(None); from libstdcxx.v6.printers import register_libstdcxx_printers; register_libstdcxx_printers(None); from default.libstdcxx_printers import patch_libstdcxx_printers_module; patch_libstdcxx_printers_module(); \n"
+15^done
+(gdb) 
+16^done
+(gdb) 
+&"python from default.commands import register_commands; register_commands();\n"
+17^done
+(gdb) 
+18^done
+(gdb) 
+19^done,bkpt={number="1",type="breakpoint",disp="keep",enabled="y",addr="0x0000000000001276",func="IImpl::impl::impl()",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/include/impl.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/include/impl.h",line="10",thread-groups=["i1"],times="0",original-location="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/include/impl.h:10"}
+(gdb) 
+20^done
+(gdb) 
+21^done
+(gdb) 
+22^done
+(gdb) 
+23^done
+(gdb) 
+&"maintenance info sections\n"
+~"Exec file: `/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/cmake-build-debug/binary', file type elf64-x86-64.\n"
+~" [0]      0x00000350->0x00000370 at 0x00000350: .note.gnu.property ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [1]      0x00000370->0x00000394 at 0x00000370: .note.gnu.build-id ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [2]      0x00000394->0x000003b0 at 0x00000394: .interp ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [3]      0x000003b0->0x000003e0 at 0x000003b0: .gnu.hash ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [4]      0x000003e0->0x00000500 at 0x000003e0: .dynsym ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [5]      0x00000500->0x00000667 at 0x00000500: .dynstr ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [6]      0x00000668->0x00000680 at 0x00000668: .gnu.version ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [7]      0x00000680->0x000006e0 at 0x00000680: .gnu.version_r ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [8]      0x000006e0->0x000007d0 at 0x000006e0: .rela.dyn ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [9]      0x000007d0->0x00000818 at 0x000007d0: .rela.plt ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [10]     0x00001000->0x00001017 at 0x00001000: .init ALLOC LOAD READONLY CODE HAS_CONTENTS\n"
+~" [11]     0x00001020->0x00001060 at 0x00001020: .plt ALLOC LOAD READONLY CODE HAS_CONTENTS\n"
+~" [12]     0x00001060->0x00001070 at 0x00001060: .plt.got ALLOC LOAD READONLY CODE HAS_CONTENTS\n"
+~" [13]     0x00001070->0x0000131a at 0x00001070: .text ALLOC LOAD READONLY CODE HAS_CONTENTS\n"
+~" [14]     0x0000131c->0x00001325 at 0x0000131c: .fini ALLOC LOAD READONLY CODE HAS_CONTENTS\n"
+~" [15]     0x00002000->0x000020b2 at 0x00002000: .rodata ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [16]     0x000020b4->0x00002160 at 0x000020b4: .eh_frame_hdr ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [17]     0x00002160->0x000023ac at 0x00002160: .eh_frame ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [18]     0x000023ac->0x000023cc at 0x000023ac: .note.ABI-tag ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [19]     0x00003db8->0x00003dc0 at 0x00002db8: .init_array ALLOC LOAD DATA HAS_CONTENTS\n"
+~" [20]     0x00003dc0->0x00003dc8 at 0x00002dc0: .fini_array ALLOC LOAD DATA HAS_CONTENTS\n"
+~" [21]     0x00003dc8->0x00003fb8 at 0x00002dc8: .dynamic ALLOC LOAD DATA HAS_CONTENTS\n"
+~" [22]     0x00003fb8->0x00003fe8 at 0x00002fb8: .got ALLOC LOAD DATA HAS_CONTENTS\n"
+~" [23]     0x00003fe8->0x00004018 at 0x00002fe8: .got.plt ALLOC LOAD DATA HAS_CONTENTS\n"
+~" [24]     0x00004018->0x00004028 at 0x00003018: .data ALLOC LOAD DATA HAS_CONTENTS\n"
+~" [25]     0x00004040->0x00004158 at 0x00003028: .bss ALLOC\n"
+~" [26]     0x00000000->0x0000001e at 0x00003028: .comment READONLY HAS_CONTENTS\n"
+~" [27]     0x00000000->0x00000100 at 0x00003046: .debug_aranges READONLY HAS_CONTENTS\n"
+~" [28]     0x00000000->0x0000adb5 at 0x00003146: .debug_info READONLY HAS_CONTENTS\n"
+~" [29]     0x00000000->0x000018d8 at 0x0000defb: .debug_abbrev READONLY HAS_CONTENTS\n"
+~" [30]     0x00000000->0x00000775 at 0x0000f7d3: .debug_line READONLY HAS_CONTENTS\n"
+~" [31]     0x00000000->0x00006f61 at 0x0000ff48: .debug_str READONLY HAS_CONTENTS\n"
+~" [32]     0x00000000->0x0000076f at 0x00016ea9: .debug_line_str READONLY HAS_CONTENTS\n"
+~" [33]     0x00000000->0x000001d8 at 0x00017618: .debug_loclists READONLY HAS_CONTENTS\n"
+~" [34]     0x00000000->0x0000006c at 0x000177f0: .debug_rnglists READONLY HAS_CONTENTS\n"
+24^done
+(gdb) 
+25^done
+(gdb) 
+=thread-group-started,id="i1",pid="15092"
+=thread-created,id="1",group-id="i1"
+=breakpoint-modified,bkpt={number="1",type="breakpoint",disp="keep",enabled="y",addr="0x0000555555555276",func="IImpl::impl::impl()",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/include/impl.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/include/impl.h",line="10",thread-groups=["i1"],times="0",original-location="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/include/impl.h:10"}
+=library-loaded,id="/lib64/ld-linux-x86-64.so.2",target-name="/lib64/ld-linux-x86-64.so.2",host-name="/lib64/ld-linux-x86-64.so.2",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7fc8000",to="0x00007ffff7fef2d1"}]
+26^running
+*running,thread-id="all"
+(gdb) 
+=library-loaded,id="/lib/x86_64-linux-gnu/libstdc++.so.6",target-name="/lib/x86_64-linux-gnu/libstdc++.so.6",host-name="/lib/x86_64-linux-gnu/libstdc++.so.6",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7ca6280",to="0x00007ffff7dd1b2e"}]
+=library-loaded,id="/lib/x86_64-linux-gnu/libc.so.6",target-name="/lib/x86_64-linux-gnu/libc.so.6",host-name="/lib/x86_64-linux-gnu/libc.so.6",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7a32400",to="0x00007ffff7b9617d"}]
+=library-loaded,id="/lib/x86_64-linux-gnu/libm.so.6",target-name="/lib/x86_64-linux-gnu/libm.so.6",host-name="/lib/x86_64-linux-gnu/libm.so.6",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7ec32c0",to="0x00007ffff7f3fdc6"}]
+=library-loaded,id="/lib/x86_64-linux-gnu/libgcc_s.so.1",target-name="/lib/x86_64-linux-gnu/libgcc_s.so.1",host-name="/lib/x86_64-linux-gnu/libgcc_s.so.1",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7e893c0",to="0x00007ffff7eab865"}]
+~"[Thread debugging using libthread_db enabled]\n"
+~"Using host libthread_db library \"/lib/x86_64-linux-gnu/libthread_db.so.1\".\n"
+~"[Inferior 1 (process 15092) exited normally]\n"
+=thread-exited,id="1",group-id="i1"
+=thread-group-exited,id="i1",exit-code="0"
+*stopped,reason="exited-normally"
+(gdb) 
+0^done
+(gdb) 
+27^exit
+=cmd-param-changed,param="logging enabled",value="on"
+=cmd-param-changed,param="logging file",value="/tmp/gdb.txt"
+(gdb) 
+&"python import gdb; print(gdb.VERSION);\n"
+~"15.2\n"
+1^done
+(gdb) 
+2^done
+(gdb) 
+3^done
+(gdb) 
+4^done
+(gdb) 
+5^done
+(gdb) 
+6^done
+(gdb) 
+7^done
+(gdb) 
+8^done
+(gdb) 
+9^done
+(gdb) 
+10^done
+(gdb) 
+11^done
+(gdb) 
+12^done,value="off"
+(gdb) 
+&"handle SIGSTOP stop nopass\n"
+~"Signal        Stop\tPrint\tPass to program\tDescription\n"
+~"SIGSTOP       Yes\tYes\tNo\t\tStopped (signal)\n"
+13^done
+(gdb) 
+&"info pretty-printer\n"
+~"global pretty-printers:\n"
+~"  builtin\n"
+~"    mpx_bound128\n"
+14^done
+(gdb) 
+&"python import sys; sys.dont_write_bytecode = True; sys.path.insert(0, \"/opt/clion/clion-2024.3.4/bin/gdb/renderers\"); from default.printers import register_default_printers; register_default_printers(None); from libstdcxx.v6.printers import register_libstdcxx_printers; register_libstdcxx_printers(None); from default.libstdcxx_printers import patch_libstdcxx_printers_module; patch_libstdcxx_printers_module(); \n"
+15^done
+(gdb) 
+16^done
+(gdb) 
+&"python from default.commands import register_commands; register_commands();\n"
+17^done
+(gdb) 
+18^done
+(gdb) 
+19^done,bkpt={number="1",type="breakpoint",disp="keep",enabled="y",addr="0x0000000000001276",func="IImpl::impl::impl()",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/include/impl.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/include/impl.h",line="10",thread-groups=["i1"],times="0",original-location="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/include/impl.h:10"}
+(gdb) 
+20^done,bkpt={number="2",type="breakpoint",disp="keep",enabled="y",addr="0x0000000000001161",func="main()",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",thread-groups=["i1"],times="0",original-location="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp:7"}
+(gdb) 
+21^done
+(gdb) 
+22^done
+(gdb) 
+23^done
+(gdb) 
+24^done
+(gdb) 
+&"maintenance info sections\n"
+~"Exec file: `/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/cmake-build-debug/binary', file type elf64-x86-64.\n"
+~" [0]      0x00000350->0x00000370 at 0x00000350: .note.gnu.property ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [1]      0x00000370->0x00000394 at 0x00000370: .note.gnu.build-id ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [2]      0x00000394->0x000003b0 at 0x00000394: .interp ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [3]      0x000003b0->0x000003e0 at 0x000003b0: .gnu.hash ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [4]      0x000003e0->0x00000500 at 0x000003e0: .dynsym ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [5]      0x00000500->0x00000667 at 0x00000500: .dynstr ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [6]      0x00000668->0x00000680 at 0x00000668: .gnu.version ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [7]      0x00000680->0x000006e0 at 0x00000680: .gnu.version_r ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [8]      0x000006e0->0x000007d0 at 0x000006e0: .rela.dyn ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [9]      0x000007d0->0x00000818 at 0x000007d0: .rela.plt ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [10]     0x00001000->0x00001017 at 0x00001000: .init ALLOC LOAD READONLY CODE HAS_CONTENTS\n"
+~" [11]     0x00001020->0x00001060 at 0x00001020: .plt ALLOC LOAD READONLY CODE HAS_CONTENTS\n"
+~" [12]     0x00001060->0x00001070 at 0x00001060: .plt.got ALLOC LOAD READONLY CODE HAS_CONTENTS\n"
+~" [13]     0x00001070->0x0000131a at 0x00001070: .text ALLOC LOAD READONLY CODE HAS_CONTENTS\n"
+~" [14]     0x0000131c->0x00001325 at 0x0000131c: .fini ALLOC LOAD READONLY CODE HAS_CONTENTS\n"
+~" [15]     0x00002000->0x000020b2 at 0x00002000: .rodata ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [16]     0x000020b4->0x00002160 at 0x000020b4: .eh_frame_hdr ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [17]     0x00002160->0x000023ac at 0x00002160: .eh_frame ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [18]     0x000023ac->0x000023cc at 0x000023ac: .note.ABI-tag ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [19]     0x00003db8->0x00003dc0 at 0x00002db8: .init_array ALLOC LOAD DATA HAS_CONTENTS\n"
+~" [20]     0x00003dc0->0x00003dc8 at 0x00002dc0: .fini_array ALLOC LOAD DATA HAS_CONTENTS\n"
+~" [21]     0x00003dc8->0x00003fb8 at 0x00002dc8: .dynamic ALLOC LOAD DATA HAS_CONTENTS\n"
+~" [22]     0x00003fb8->0x00003fe8 at 0x00002fb8: .got ALLOC LOAD DATA HAS_CONTENTS\n"
+~" [23]     0x00003fe8->0x00004018 at 0x00002fe8: .got.plt ALLOC LOAD DATA HAS_CONTENTS\n"
+~" [24]     0x00004018->0x00004028 at 0x00003018: .data ALLOC LOAD DATA HAS_CONTENTS\n"
+~" [25]     0x00004040->0x00004158 at 0x00003028: .bss ALLOC\n"
+~" [26]     0x00000000->0x0000001e at 0x00003028: .comment READONLY HAS_CONTENTS\n"
+~" [27]     0x00000000->0x00000100 at 0x00003046: .debug_aranges READONLY HAS_CONTENTS\n"
+~" [28]     0x00000000->0x0000adb5 at 0x00003146: .debug_info READONLY HAS_CONTENTS\n"
+~" [29]     0x00000000->0x000018d8 at 0x0000defb: .debug_abbrev READONLY HAS_CONTENTS\n"
+~" [30]     0x00000000->0x00000775 at 0x0000f7d3: .debug_line READONLY HAS_CONTENTS\n"
+~" [31]     0x00000000->0x00006f61 at 0x0000ff48: .debug_str READONLY HAS_CONTENTS\n"
+~" [32]     0x00000000->0x0000076f at 0x00016ea9: .debug_line_str READONLY HAS_CONTENTS\n"
+~" [33]     0x00000000->0x000001d8 at 0x00017618: .debug_loclists READONLY HAS_CONTENTS\n"
+~" [34]     0x00000000->0x0000006c at 0x000177f0: .debug_rnglists READONLY HAS_CONTENTS\n"
+25^done
+(gdb) 
+26^done
+(gdb) 
+=thread-group-started,id="i1",pid="15116"
+=thread-created,id="1",group-id="i1"
+=breakpoint-modified,bkpt={number="1",type="breakpoint",disp="keep",enabled="y",addr="0x0000555555555276",func="IImpl::impl::impl()",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/include/impl.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/include/impl.h",line="10",thread-groups=["i1"],times="0",original-location="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/include/impl.h:10"}
+=breakpoint-modified,bkpt={number="2",type="breakpoint",disp="keep",enabled="y",addr="0x0000555555555161",func="main()",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",thread-groups=["i1"],times="0",original-location="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp:7"}
+=library-loaded,id="/lib64/ld-linux-x86-64.so.2",target-name="/lib64/ld-linux-x86-64.so.2",host-name="/lib64/ld-linux-x86-64.so.2",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7fc8000",to="0x00007ffff7fef2d1"}]
+27^running
+*running,thread-id="all"
+(gdb) 
+=library-loaded,id="/lib/x86_64-linux-gnu/libstdc++.so.6",target-name="/lib/x86_64-linux-gnu/libstdc++.so.6",host-name="/lib/x86_64-linux-gnu/libstdc++.so.6",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7ca6280",to="0x00007ffff7dd1b2e"}]
+=library-loaded,id="/lib/x86_64-linux-gnu/libc.so.6",target-name="/lib/x86_64-linux-gnu/libc.so.6",host-name="/lib/x86_64-linux-gnu/libc.so.6",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7a32400",to="0x00007ffff7b9617d"}]
+=library-loaded,id="/lib/x86_64-linux-gnu/libm.so.6",target-name="/lib/x86_64-linux-gnu/libm.so.6",host-name="/lib/x86_64-linux-gnu/libm.so.6",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7ec32c0",to="0x00007ffff7f3fdc6"}]
+=library-loaded,id="/lib/x86_64-linux-gnu/libgcc_s.so.1",target-name="/lib/x86_64-linux-gnu/libgcc_s.so.1",host-name="/lib/x86_64-linux-gnu/libgcc_s.so.1",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7e893c0",to="0x00007ffff7eab865"}]
+~"[Thread debugging using libthread_db enabled]\n"
+~"Using host libthread_db library \"/lib/x86_64-linux-gnu/libthread_db.so.1\".\n"
+=breakpoint-modified,bkpt={number="2",type="breakpoint",disp="keep",enabled="y",addr="0x0000555555555161",func="main()",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",thread-groups=["i1"],times="1",original-location="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp:7"}
+~"\n"
+~"Breakpoint 2, main () at /home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp:8\n"
+~"8\t    impl.testA();\n"
+*stopped,reason="breakpoint-hit",disp="keep",bkptno="2",frame={addr="0x0000555555555161",func="main",args=[],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="3"
+(gdb) 
+0^done
+(gdb) 
+28^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 15116)",name="binary",frame={level="0",addr="0x0000555555555161",func="main",args=[],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",arch="i386:x86-64"},state="stopped",core="3"}]
+(gdb) 
+29^done,value="replay"
+(gdb) 
+30^done
+(gdb) 
+31^done
+(gdb) 
+32^done,value="att"
+(gdb) 
+33^done
+(gdb) 
+34^done,value="auto"
+(gdb) 
+~"The target architecture is set to \"auto\" (currently \"i386:x86-64\").\n"
+35^done
+(gdb) 
+36^done,register-names=["rax","rbx","rcx","rdx","rsi","rdi","rbp","rsp","r8","r9","r10","r11","r12","r13","r14","r15","rip","eflags","cs","ss","ds","es","fs","gs","st0","st1","st2","st3","st4","st5","st6","st7","fctrl","fstat","ftag","fiseg","fioff","foseg","fooff","fop","xmm0","xmm1","xmm2","xmm3","xmm4","xmm5","xmm6","xmm7","xmm8","xmm9","xmm10","xmm11","xmm12","xmm13","xmm14","xmm15","mxcsr","ymm0h","ymm1h","ymm2h","ymm3h","ymm4h","ymm5h","ymm6h","ymm7h","ymm8h","ymm9h","ymm10h","ymm11h","ymm12h","ymm13h","ymm14h","ymm15h","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","fs_base","gs_base","orig_rax","al","bl","cl","dl","sil","dil","bpl","spl","r8l","r9l","r10l","r11l","r12l","r13l","r14l","r15l","ah","bh","ch","dh","ax","bx","cx","dx","si","di","bp","","r8w","r9w","r10w","r11w","r12w","r13w","r14w","r15w","eax","ebx","ecx","edx","esi","edi","ebp","esp","r8d","r9d","r10d","r11d","r12d","r13d","r14d","r15d","ymm0","ymm1","ymm2","ymm3","ymm4","ymm5","ymm6","ymm7","ymm8","ymm9","ymm10","ymm11","ymm12","ymm13","ymm14","ymm15"]
+(gdb) 
+37^done,stack=[frame={level="0",addr="0x0000555555555161",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",arch="i386:x86-64"},frame={level="1",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="2",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="3",addr="0x0000555555555091",func="_start",arch="i386:x86-64"}]
+(gdb) 
+38^done,value="0x7fffffffe540"
+(gdb) 
+39^done,variables=[{name="impl"}],filtered="1"
+(gdb) 
+~"type = iface<IImpl>\n"
+40^done
+(gdb) 
+41^done,cidr-id="0",name="v0",exp="impl",value="{...}",type="iface<IImpl>",numchild="0"
+0^done
+(gdb) 
+42^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x00005555555551a4",func="iface<IImpl>::testA",args=[{name="this",value="0x7fffffffe53f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="14",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="0"
+(gdb) 
+43^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 15116)",name="binary",frame={level="0",addr="0x00005555555551a4",func="iface<IImpl>::testA",args=[{name="this",value="0x7fffffffe53f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="14",arch="i386:x86-64"},state="stopped",core="0"}]
+(gdb) 
+44^done
+(gdb) 
+45^done,stack=[frame={level="0",addr="0x00005555555551a4",func="iface<IImpl>::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="14",arch="i386:x86-64"},frame={level="1",addr="0x000055555555516d",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",arch="i386:x86-64"},frame={level="2",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="3",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="4",addr="0x0000555555555091",func="_start",arch="i386:x86-64"}]
+(gdb) 
+46^done,value="0x7fffffffe520"
+(gdb) 
+47^done,variables=[{name="this"}],filtered="1"
+(gdb) 
+~"type = iface<IImpl> * const\n"
+48^done
+(gdb) 
+49^done,cidr-id="0",name="v0",exp="this",value="0x7fffffffe53f",type="iface<IImpl> * const",numchild="0"
+0^done
+(gdb) 
+50^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x000055555555528c",func="IImpl::testA",args=[{name="this",value="0x7fffffffe53f"}],file="/usr/include/c++/14/new",fullname="/usr/include/c++/14/new",line="197",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="4"
+(gdb) 
+51^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 15116)",name="binary",frame={level="0",addr="0x000055555555528c",func="IImpl::testA",args=[{name="this",value="0x7fffffffe53f"}],file="/usr/include/c++/14/new",fullname="/usr/include/c++/14/new",line="197",arch="i386:x86-64"},state="stopped",core="4"}]
+(gdb) 
+52^done
+(gdb) 
+53^done,stack=[frame={level="0",addr="0x000055555555528c",func="IImpl::testA",file="/usr/include/c++/14/new",fullname="/usr/include/c++/14/new",line="197",arch="i386:x86-64"},frame={level="1",addr="0x00005555555551b0",func="iface<IImpl>::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="14",arch="i386:x86-64"},frame={level="2",addr="0x000055555555516d",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",arch="i386:x86-64"},frame={level="3",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="4",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="5",addr="0x0000555555555091",func="_start",arch="i386:x86-64"}]
+(gdb) 
+54^done,value="0x7fffffffe500"
+(gdb) 
+55^done,variables=[{name="this"}],filtered="1"
+(gdb) 
+~"type = IImpl * const\n"
+56^done
+(gdb) 
+57^done,cidr-id="0",name="v0",exp="this",value="0x7fffffffe53f",type="IImpl * const",numchild="2"
+0^done
+(gdb) 
+58^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x00005555555552a4",func="IImpl::impl::beforeTestA",args=[{name="this",value="0x7fffffffe53f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/impl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/impl.cpp",line="5",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="6"
+(gdb) 
+59^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 15116)",name="binary",frame={level="0",addr="0x00005555555552a4",func="IImpl::impl::beforeTestA",args=[{name="this",value="0x7fffffffe53f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/impl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/impl.cpp",line="5",arch="i386:x86-64"},state="stopped",core="6"}]
+(gdb) 
+60^done
+(gdb) 
+61^done,stack=[frame={level="0",addr="0x00005555555552a4",func="IImpl::impl::beforeTestA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/impl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/impl.cpp",line="5",arch="i386:x86-64"},frame={level="1",addr="0x00005555555551b0",func="iface<IImpl>::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="14",arch="i386:x86-64"},frame={level="2",addr="0x000055555555516d",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",arch="i386:x86-64"},frame={level="3",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="4",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="5",addr="0x0000555555555091",func="_start",arch="i386:x86-64"}]
+(gdb) 
+62^done,value="0x7fffffffe500"
+(gdb) 
+63^done,variables=[{name="this"},{name="__PRETTY_FUNCTION__"}],filtered="0"
+(gdb) 
+~"type = const IImpl::impl * const\n"
+64^done
+(gdb) 
+~"type = const char [38]\n"
+65^done
+(gdb) 
+66^done,cidr-id="0",name="v0",exp="this",value="0x7fffffffe53f",type="const IImpl::impl * const",numchild="2"
+0^done
+(gdb) 
+67^done,cidr-id="1",name="v1",exp="__PRETTY_FUNCTION__",dynamic="1",value="\"void IImpl::impl::beforeTestA() const\"",type="const char [38]",displayhint="array",has_more="1"
+0^done
+(gdb) 
+68^done,children=[{cidr-id="2",name="v2",exp="A",value="256",type="int",numchild="0"},{cidr-id="3",name="v3",exp="B",value="0",type="int",numchild="0"}],has_more="0"
+0^done
+(gdb) 
+&"kill\n"
+~"Kill the program being debugged? (y or n) [answered Y; input not from terminal]\n"
+=thread-exited,id="1",group-id="i1"
+=thread-group-exited,id="i1"
+~"[Inferior 1 (process 15116) killed]\n"
+69^done
+(gdb) 
+70^exit
+=cmd-param-changed,param="logging enabled",value="on"
+=cmd-param-changed,param="logging file",value="/tmp/gdb.txt"
+(gdb) 
+&"python import gdb; print(gdb.VERSION);\n"
+~"15.2\n"
+1^done
+(gdb) 
+2^done
+(gdb) 
+3^done
+(gdb) 
+4^done
+(gdb) 
+5^done
+(gdb) 
+6^done
+(gdb) 
+7^done
+(gdb) 
+8^done
+(gdb) 
+9^done
+(gdb) 
+10^done
+(gdb) 
+11^done
+(gdb) 
+12^done,value="off"
+(gdb) 
+&"handle SIGSTOP stop nopass\n"
+~"Signal        Stop\tPrint\tPass to program\tDescription\n"
+~"SIGSTOP       Yes\tYes\tNo\t\tStopped (signal)\n"
+13^done
+(gdb) 
+&"info pretty-printer\n"
+~"global pretty-printers:\n"
+~"  builtin\n"
+~"    mpx_bound128\n"
+14^done
+(gdb) 
+&"python import sys; sys.dont_write_bytecode = True; sys.path.insert(0, \"/opt/clion/clion-2024.3.4/bin/gdb/renderers\"); from default.printers import register_default_printers; register_default_printers(None); from libstdcxx.v6.printers import register_libstdcxx_printers; register_libstdcxx_printers(None); from default.libstdcxx_printers import patch_libstdcxx_printers_module; patch_libstdcxx_printers_module(); \n"
+15^done
+(gdb) 
+16^done
+(gdb) 
+&"python from default.commands import register_commands; register_commands();\n"
+17^done
+(gdb) 
+18^done
+(gdb) 
+19^done,bkpt={number="1",type="breakpoint",disp="keep",enabled="y",addr="0x0000000000001161",func="main()",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",thread-groups=["i1"],times="0",original-location="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp:7"}
+(gdb) 
+20^done,bkpt={number="2",type="breakpoint",disp="keep",enabled="y",addr="0x00000000000013b4",func="IImpl::GetImpl()",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="9",thread-groups=["i1"],times="0",original-location="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp:1"}
+(gdb) 
+21^done
+(gdb) 
+22^done
+(gdb) 
+23^done
+(gdb) 
+24^done
+(gdb) 
+&"maintenance info sections\n"
+~"Exec file: `/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/cmake-build-debug/binary', file type elf64-x86-64.\n"
+~" [0]      0x00000350->0x00000370 at 0x00000350: .note.gnu.property ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [1]      0x00000370->0x00000394 at 0x00000370: .note.gnu.build-id ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [2]      0x00000394->0x000003b0 at 0x00000394: .interp ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [3]      0x000003b0->0x000003d8 at 0x000003b0: .gnu.hash ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [4]      0x000003d8->0x000004f8 at 0x000003d8: .dynsym ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [5]      0x000004f8->0x0000065f at 0x000004f8: .dynstr ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [6]      0x00000660->0x00000678 at 0x00000660: .gnu.version ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [7]      0x00000678->0x000006d8 at 0x00000678: .gnu.version_r ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [8]      0x000006d8->0x000007c8 at 0x000006d8: .rela.dyn ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [9]      0x000007c8->0x00000810 at 0x000007c8: .rela.plt ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [10]     0x00001000->0x00001017 at 0x00001000: .init ALLOC LOAD READONLY CODE HAS_CONTENTS\n"
+~" [11]     0x00001020->0x00001060 at 0x00001020: .plt ALLOC LOAD READONLY CODE HAS_CONTENTS\n"
+~" [12]     0x00001060->0x00001068 at 0x00001060: .plt.got ALLOC LOAD READONLY CODE HAS_CONTENTS\n"
+~" [13]     0x00001070->0x000014f2 at 0x00001070: .text ALLOC LOAD READONLY CODE HAS_CONTENTS\n"
+~" [14]     0x000014f4->0x000014fd at 0x000014f4: .fini ALLOC LOAD READONLY CODE HAS_CONTENTS\n"
+~" [15]     0x00002000->0x000020b1 at 0x00002000: .rodata ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [16]     0x000020b4->0x00002190 at 0x000020b4: .eh_frame_hdr ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [17]     0x00002190->0x00002504 at 0x00002190: .eh_frame ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [18]     0x00002504->0x00002524 at 0x00002504: .note.ABI-tag ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [19]     0x00003db8->0x00003dc0 at 0x00002db8: .init_array ALLOC LOAD DATA HAS_CONTENTS\n"
+~" [20]     0x00003dc0->0x00003dc8 at 0x00002dc0: .fini_array ALLOC LOAD DATA HAS_CONTENTS\n"
+~" [21]     0x00003dc8->0x00003fb8 at 0x00002dc8: .dynamic ALLOC LOAD DATA HAS_CONTENTS\n"
+~" [22]     0x00003fb8->0x00003fe8 at 0x00002fb8: .got ALLOC LOAD DATA HAS_CONTENTS\n"
+~" [23]     0x00003fe8->0x00004018 at 0x00002fe8: .got.plt ALLOC LOAD DATA HAS_CONTENTS\n"
+~" [24]     0x00004018->0x00004028 at 0x00003018: .data ALLOC LOAD DATA HAS_CONTENTS\n"
+~" [25]     0x00004040->0x00004158 at 0x00003028: .bss ALLOC\n"
+~" [26]     0x00000000->0x0000001e at 0x00003028: .comment READONLY HAS_CONTENTS\n"
+~" [27]     0x00000000->0x00000160 at 0x00003046: .debug_aranges READONLY HAS_CONTENTS\n"
+~" [28]     0x00000000->0x000149fb at 0x000031a6: .debug_info READONLY HAS_CONTENTS\n"
+~" [29]     0x00000000->0x00001efe at 0x00017ba1: .debug_abbrev READONLY HAS_CONTENTS\n"
+~" [30]     0x00000000->0x000007a3 at 0x00019a9f: .debug_line READONLY HAS_CONTENTS\n"
+~" [31]     0x00000000->0x00006bc2 at 0x0001a242: .debug_str READONLY HAS_CONTENTS\n"
+~" [32]     0x00000000->0x00000710 at 0x00020e04: .debug_line_str READONLY HAS_CONTENTS\n"
+~" [33]     0x00000000->0x00000093 at 0x00021514: .debug_rnglists READONLY HAS_CONTENTS\n"
+25^done
+(gdb) 
+26^done
+(gdb) 
+=thread-group-started,id="i1",pid="15771"
+=thread-created,id="1",group-id="i1"
+=breakpoint-modified,bkpt={number="1",type="breakpoint",disp="keep",enabled="y",addr="0x0000555555555161",func="main()",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",thread-groups=["i1"],times="0",original-location="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp:7"}
+=breakpoint-modified,bkpt={number="2",type="breakpoint",disp="keep",enabled="y",addr="0x00005555555553b4",func="IImpl::GetImpl()",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="9",thread-groups=["i1"],times="0",original-location="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp:1"}
+=library-loaded,id="/lib64/ld-linux-x86-64.so.2",target-name="/lib64/ld-linux-x86-64.so.2",host-name="/lib64/ld-linux-x86-64.so.2",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7fc8000",to="0x00007ffff7fef2d1"}]
+27^running
+*running,thread-id="all"
+(gdb) 
+=library-loaded,id="/lib/x86_64-linux-gnu/libstdc++.so.6",target-name="/lib/x86_64-linux-gnu/libstdc++.so.6",host-name="/lib/x86_64-linux-gnu/libstdc++.so.6",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7ca6280",to="0x00007ffff7dd1b2e"}]
+=library-loaded,id="/lib/x86_64-linux-gnu/libc.so.6",target-name="/lib/x86_64-linux-gnu/libc.so.6",host-name="/lib/x86_64-linux-gnu/libc.so.6",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7a32400",to="0x00007ffff7b9617d"}]
+=library-loaded,id="/lib/x86_64-linux-gnu/libm.so.6",target-name="/lib/x86_64-linux-gnu/libm.so.6",host-name="/lib/x86_64-linux-gnu/libm.so.6",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7ec32c0",to="0x00007ffff7f3fdc6"}]
+=library-loaded,id="/lib/x86_64-linux-gnu/libgcc_s.so.1",target-name="/lib/x86_64-linux-gnu/libgcc_s.so.1",host-name="/lib/x86_64-linux-gnu/libgcc_s.so.1",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7e893c0",to="0x00007ffff7eab865"}]
+~"[Thread debugging using libthread_db enabled]\n"
+~"Using host libthread_db library \"/lib/x86_64-linux-gnu/libthread_db.so.1\".\n"
+=breakpoint-modified,bkpt={number="1",type="breakpoint",disp="keep",enabled="y",addr="0x0000555555555161",func="main()",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",thread-groups=["i1"],times="1",original-location="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp:7"}
+~"\n"
+~"Breakpoint 1, main () at /home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp:8\n"
+~"8\t    impl.testA();\n"
+*stopped,reason="breakpoint-hit",disp="keep",bkptno="1",frame={addr="0x0000555555555161",func="main",args=[],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="1"
+(gdb) 
+0^done
+(gdb) 
+28^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 15771)",name="binary",frame={level="0",addr="0x0000555555555161",func="main",args=[],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",arch="i386:x86-64"},state="stopped",core="1"}]
+(gdb) 
+29^done,value="replay"
+(gdb) 
+30^done
+(gdb) 
+31^done
+(gdb) 
+32^done,value="att"
+(gdb) 
+33^done
+(gdb) 
+34^done,value="auto"
+(gdb) 
+~"The target architecture is set to \"auto\" (currently \"i386:x86-64\").\n"
+35^done
+(gdb) 
+36^done,register-names=["rax","rbx","rcx","rdx","rsi","rdi","rbp","rsp","r8","r9","r10","r11","r12","r13","r14","r15","rip","eflags","cs","ss","ds","es","fs","gs","st0","st1","st2","st3","st4","st5","st6","st7","fctrl","fstat","ftag","fiseg","fioff","foseg","fooff","fop","xmm0","xmm1","xmm2","xmm3","xmm4","xmm5","xmm6","xmm7","xmm8","xmm9","xmm10","xmm11","xmm12","xmm13","xmm14","xmm15","mxcsr","ymm0h","ymm1h","ymm2h","ymm3h","ymm4h","ymm5h","ymm6h","ymm7h","ymm8h","ymm9h","ymm10h","ymm11h","ymm12h","ymm13h","ymm14h","ymm15h","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","fs_base","gs_base","orig_rax","al","bl","cl","dl","sil","dil","bpl","spl","r8l","r9l","r10l","r11l","r12l","r13l","r14l","r15l","ah","bh","ch","dh","ax","bx","cx","dx","si","di","bp","","r8w","r9w","r10w","r11w","r12w","r13w","r14w","r15w","eax","ebx","ecx","edx","esi","edi","ebp","esp","r8d","r9d","r10d","r11d","r12d","r13d","r14d","r15d","ymm0","ymm1","ymm2","ymm3","ymm4","ymm5","ymm6","ymm7","ymm8","ymm9","ymm10","ymm11","ymm12","ymm13","ymm14","ymm15"]
+(gdb) 
+37^done,stack=[frame={level="0",addr="0x0000555555555161",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",arch="i386:x86-64"},frame={level="1",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="2",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="3",addr="0x0000555555555091",func="_start",arch="i386:x86-64"}]
+(gdb) 
+38^done,value="0x7fffffffe540"
+(gdb) 
+39^done,variables=[{name="impl"}],filtered="1"
+(gdb) 
+~"type = iface<IImpl>\n"
+40^done
+(gdb) 
+41^done,cidr-id="0",name="v0",exp="impl",value="{...}",type="iface<IImpl>",numchild="0"
+0^done
+(gdb) 
+42^running
+*running,thread-id="all"
+(gdb) 
+=breakpoint-modified,bkpt={number="2",type="breakpoint",disp="keep",enabled="y",addr="0x00005555555553b4",func="IImpl::GetImpl()",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="9",thread-groups=["i1"],times="1",original-location="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp:1"}
+~"\n"
+~"Breakpoint 2, IImpl::GetImpl (this=0x7fffffffe53f) at /home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp:9\n"
+~"9\t    return std::launder(reinterpret_cast<impl*>(&storage));\n"
+*stopped,reason="breakpoint-hit",disp="keep",bkptno="2",frame={addr="0x00005555555553b4",func="IImpl::GetImpl",args=[{name="this",value="0x7fffffffe53f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="9",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="1"
+(gdb) 
+43^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 15771)",name="binary",frame={level="0",addr="0x00005555555553b4",func="IImpl::GetImpl",args=[{name="this",value="0x7fffffffe53f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="9",arch="i386:x86-64"},state="stopped",core="1"}]
+(gdb) 
+44^done
+(gdb) 
+45^done,stack=[frame={level="0",addr="0x00005555555553b4",func="IImpl::GetImpl",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="9",arch="i386:x86-64"},frame={level="1",addr="0x00005555555552fa",func="IImpl::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="22",arch="i386:x86-64"},frame={level="2",addr="0x00005555555551b0",func="iface<IImpl>::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="16",arch="i386:x86-64"},frame={level="3",addr="0x000055555555516d",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",arch="i386:x86-64"},frame={level="4",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="5",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="6",addr="0x0000555555555091",func="_start",arch="i386:x86-64"}]
+(gdb) 
+46^done,value="0x7fffffffe4e0"
+(gdb) 
+47^done,variables=[{name="this"}],filtered="1"
+(gdb) 
+~"type = IImpl * const\n"
+48^done
+(gdb) 
+49^done,cidr-id="0",name="v0",exp="this",value="0x7fffffffe53f",type="IImpl * const",numchild="2"
+0^done
+(gdb) 
+50^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x00005555555553c0",func="IImpl::GetImpl",args=[{name="this",value="0x7fffffffe53f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="10",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="4"
+(gdb) 
+51^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 15771)",name="binary",frame={level="0",addr="0x00005555555553c0",func="IImpl::GetImpl",args=[{name="this",value="0x7fffffffe53f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="10",arch="i386:x86-64"},state="stopped",core="4"}]
+(gdb) 
+52^done
+(gdb) 
+53^done,stack=[frame={level="0",addr="0x00005555555553c0",func="IImpl::GetImpl",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="10",arch="i386:x86-64"},frame={level="1",addr="0x00005555555552fa",func="IImpl::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="22",arch="i386:x86-64"},frame={level="2",addr="0x00005555555551b0",func="iface<IImpl>::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="16",arch="i386:x86-64"},frame={level="3",addr="0x000055555555516d",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",arch="i386:x86-64"},frame={level="4",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="5",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="6",addr="0x0000555555555091",func="_start",arch="i386:x86-64"}]
+(gdb) 
+54^done,value="0x7fffffffe4e0"
+(gdb) 
+55^done,variables=[{name="this"}],filtered="1"
+(gdb) 
+~"type = IImpl * const\n"
+56^done
+(gdb) 
+57^done,cidr-id="0",name="v0",exp="this",value="0x7fffffffe53f",type="IImpl * const",numchild="2"
+0^done
+(gdb) 
+58^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x0000555555555302",func="IImpl::testA",args=[{name="this",value="0x7fffffffe53f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="23",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="3"
+(gdb) 
+59^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 15771)",name="binary",frame={level="0",addr="0x0000555555555302",func="IImpl::testA",args=[{name="this",value="0x7fffffffe53f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="23",arch="i386:x86-64"},state="stopped",core="3"}]
+(gdb) 
+60^done
+(gdb) 
+61^done,stack=[frame={level="0",addr="0x0000555555555302",func="IImpl::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="23",arch="i386:x86-64"},frame={level="1",addr="0x00005555555551b0",func="iface<IImpl>::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="16",arch="i386:x86-64"},frame={level="2",addr="0x000055555555516d",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",arch="i386:x86-64"},frame={level="3",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="4",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="5",addr="0x0000555555555091",func="_start",arch="i386:x86-64"}]
+(gdb) 
+62^done,value="0x7fffffffe500"
+(gdb) 
+63^done,variables=[{name="this"}],filtered="1"
+(gdb) 
+~"type = IImpl * const\n"
+64^done
+(gdb) 
+65^done,cidr-id="0",name="v0",exp="this",value="0x7fffffffe53f",type="IImpl * const",numchild="2"
+0^done
+(gdb) 
+66^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x00005555555551b0",func="iface<IImpl>::testA",args=[{name="this",value="0x7fffffffe53f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="17",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="2"
+(gdb) 
+67^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 15771)",name="binary",frame={level="0",addr="0x00005555555551b0",func="iface<IImpl>::testA",args=[{name="this",value="0x7fffffffe53f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="17",arch="i386:x86-64"},state="stopped",core="2"}]
+(gdb) 
+68^done
+(gdb) 
+69^done,stack=[frame={level="0",addr="0x00005555555551b0",func="iface<IImpl>::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="17",arch="i386:x86-64"},frame={level="1",addr="0x000055555555516d",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",arch="i386:x86-64"},frame={level="2",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="3",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="4",addr="0x0000555555555091",func="_start",arch="i386:x86-64"}]
+(gdb) 
+70^done,value="0x7fffffffe520"
+(gdb) 
+71^done,variables=[{name="this"}],filtered="1"
+(gdb) 
+~"type = iface<IImpl> * const\n"
+72^done
+(gdb) 
+73^done,cidr-id="0",name="v0",exp="this",value="0x7fffffffe53f",type="iface<IImpl> * const",numchild="0"
+0^done
+(gdb) 
+74^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x000055555555516d",func="main",args=[],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="9",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="2"
+(gdb) 
+75^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 15771)",name="binary",frame={level="0",addr="0x000055555555516d",func="main",args=[],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="9",arch="i386:x86-64"},state="stopped",core="2"}]
+(gdb) 
+76^done
+(gdb) 
+77^done,stack=[frame={level="0",addr="0x000055555555516d",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="9",arch="i386:x86-64"},frame={level="1",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="2",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="3",addr="0x0000555555555091",func="_start",arch="i386:x86-64"}]
+(gdb) 
+78^done,value="0x7fffffffe540"
+(gdb) 
+79^done,variables=[{name="impl"}],filtered="1"
+(gdb) 
+~"type = iface<IImpl>\n"
+80^done
+(gdb) 
+81^done,cidr-id="0",name="v0",exp="impl",value="{...}",type="iface<IImpl>",numchild="0"
+0^done
+(gdb) 
+82^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x00005555555551c0",func="iface<IImpl>::testB",args=[{name="this",value="0x7fffffffe53f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="20",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="7"
+(gdb) 
+83^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 15771)",name="binary",frame={level="0",addr="0x00005555555551c0",func="iface<IImpl>::testB",args=[{name="this",value="0x7fffffffe53f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="20",arch="i386:x86-64"},state="stopped",core="7"}]
+(gdb) 
+84^done
+(gdb) 
+85^done,stack=[frame={level="0",addr="0x00005555555551c0",func="iface<IImpl>::testB",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="20",arch="i386:x86-64"},frame={level="1",addr="0x0000555555555179",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="9",arch="i386:x86-64"},frame={level="2",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="3",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="4",addr="0x0000555555555091",func="_start",arch="i386:x86-64"}]
+(gdb) 
+86^done,value="0x7fffffffe520"
+(gdb) 
+87^done,variables=[{name="this"}],filtered="1"
+(gdb) 
+~"type = iface<IImpl> * const\n"
+88^done
+(gdb) 
+89^done,cidr-id="0",name="v0",exp="this",value="0x7fffffffe53f",type="iface<IImpl> * const",numchild="0"
+0^done
+(gdb) 
+90^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x0000555555555312",func="IImpl::testB",args=[{name="this",value="0x7fffffffe53f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="26",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="7"
+(gdb) 
+91^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 15771)",name="binary",frame={level="0",addr="0x0000555555555312",func="IImpl::testB",args=[{name="this",value="0x7fffffffe53f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="26",arch="i386:x86-64"},state="stopped",core="7"}]
+(gdb) 
+92^done
+(gdb) 
+93^done,stack=[frame={level="0",addr="0x0000555555555312",func="IImpl::testB",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="26",arch="i386:x86-64"},frame={level="1",addr="0x00005555555551cc",func="iface<IImpl>::testB",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="20",arch="i386:x86-64"},frame={level="2",addr="0x0000555555555179",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="9",arch="i386:x86-64"},frame={level="3",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="4",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="5",addr="0x0000555555555091",func="_start",arch="i386:x86-64"}]
+(gdb) 
+94^done,value="0x7fffffffe500"
+(gdb) 
+95^done,variables=[{name="this"}],filtered="1"
+(gdb) 
+~"type = IImpl * const\n"
+96^done
+(gdb) 
+97^done,cidr-id="0",name="v0",exp="this",value="0x7fffffffe53f",type="IImpl * const",numchild="2"
+0^done
+(gdb) 
+98^running
+*running,thread-id="all"
+(gdb) 
+=breakpoint-modified,bkpt={number="2",type="breakpoint",disp="keep",enabled="y",addr="0x00005555555553b4",func="IImpl::GetImpl()",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="9",thread-groups=["i1"],times="2",original-location="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp:1"}
+~"\n"
+~"Breakpoint 2, IImpl::GetImpl (this=0x7fffffffe53f) at /home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp:9\n"
+~"9\t    return std::launder(reinterpret_cast<impl*>(&storage));\n"
+*stopped,reason="breakpoint-hit",disp="keep",bkptno="2",frame={addr="0x00005555555553b4",func="IImpl::GetImpl",args=[{name="this",value="0x7fffffffe53f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="9",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="5"
+(gdb) 
+99^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 15771)",name="binary",frame={level="0",addr="0x00005555555553b4",func="IImpl::GetImpl",args=[{name="this",value="0x7fffffffe53f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="9",arch="i386:x86-64"},state="stopped",core="5"}]
+(gdb) 
+100^done
+(gdb) 
+101^done,stack=[frame={level="0",addr="0x00005555555553b4",func="IImpl::GetImpl",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="9",arch="i386:x86-64"},frame={level="1",addr="0x000055555555531e",func="IImpl::testB",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="26",arch="i386:x86-64"},frame={level="2",addr="0x00005555555551cc",func="iface<IImpl>::testB",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="20",arch="i386:x86-64"},frame={level="3",addr="0x0000555555555179",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="9",arch="i386:x86-64"},frame={level="4",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="5",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="6",addr="0x0000555555555091",func="_start",arch="i386:x86-64"}]
+(gdb) 
+102^done,value="0x7fffffffe4e0"
+(gdb) 
+103^done,variables=[{name="this"}],filtered="1"
+(gdb) 
+~"type = IImpl * const\n"
+104^done
+(gdb) 
+105^done,cidr-id="0",name="v0",exp="this",value="0x7fffffffe53f",type="IImpl * const",numchild="2"
+0^done
+(gdb) 
+106^done,children=[{cidr-id="1",name="v1",exp="iface<IImpl>",value="{...}",type="iface<IImpl>",numchild="0"},{cidr-id="2",name="v2",exp="storage",dynamic="1",value="{...}",type="std::byte [8]",displayhint="array",has_more="1"}],has_more="0"
+0^done
+(gdb) 
+107^done,children=[{cidr-id="3",name="v3",exp="[0]",value="0",type="std::byte",numchild="0"},{cidr-id="4",name="v4",exp="[1]",value="1",type="std::byte",numchild="0"},{cidr-id="5",name="v5",exp="[2]",value="0",type="std::byte",numchild="0"},{cidr-id="6",name="v6",exp="[3]",value="0",type="std::byte",numchild="0"},{cidr-id="7",name="v7",exp="[4]",value="0",type="std::byte",numchild="0"},{cidr-id="8",name="v8",exp="[5]",value="0",type="std::byte",numchild="0"},{cidr-id="9",name="v9",exp="[6]",value="0",type="std::byte",numchild="0"},{cidr-id="10",name="v10",exp="[7]",value="0",type="std::byte",numchild="0"}],has_more="0"
+0^done
+(gdb) 
+108^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x00005555555553c0",func="IImpl::GetImpl",args=[{name="this",value="0x7fffffffe53f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="10",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="5"
+(gdb) 
+109^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 15771)",name="binary",frame={level="0",addr="0x00005555555553c0",func="IImpl::GetImpl",args=[{name="this",value="0x7fffffffe53f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="10",arch="i386:x86-64"},state="stopped",core="5"}]
+(gdb) 
+110^done
+(gdb) 
+111^done,stack=[frame={level="0",addr="0x00005555555553c0",func="IImpl::GetImpl",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="10",arch="i386:x86-64"},frame={level="1",addr="0x000055555555531e",func="IImpl::testB",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="26",arch="i386:x86-64"},frame={level="2",addr="0x00005555555551cc",func="iface<IImpl>::testB",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="20",arch="i386:x86-64"},frame={level="3",addr="0x0000555555555179",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="9",arch="i386:x86-64"},frame={level="4",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="5",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="6",addr="0x0000555555555091",func="_start",arch="i386:x86-64"}]
+(gdb) 
+112^done,value="0x7fffffffe4e0"
+(gdb) 
+113^done,variables=[{name="this"}],filtered="1"
+(gdb) 
+~"type = IImpl * const\n"
+114^done
+(gdb) 
+115^done,cidr-id="0",name="v0",exp="this",value="0x7fffffffe53f",type="IImpl * const",numchild="2"
+0^done
+(gdb) 
+116^done,children=[{cidr-id="1",name="v1",exp="iface<IImpl>",value="{...}",type="iface<IImpl>",numchild="0"},{cidr-id="2",name="v2",exp="storage",dynamic="1",value="{...}",type="std::byte [8]",displayhint="array",has_more="1"}],has_more="0"
+0^done
+(gdb) 
+117^done,children=[{cidr-id="3",name="v3",exp="[0]",value="0",type="std::byte",numchild="0"},{cidr-id="4",name="v4",exp="[1]",value="1",type="std::byte",numchild="0"},{cidr-id="5",name="v5",exp="[2]",value="0",type="std::byte",numchild="0"},{cidr-id="6",name="v6",exp="[3]",value="0",type="std::byte",numchild="0"},{cidr-id="7",name="v7",exp="[4]",value="0",type="std::byte",numchild="0"},{cidr-id="8",name="v8",exp="[5]",value="0",type="std::byte",numchild="0"},{cidr-id="9",name="v9",exp="[6]",value="0",type="std::byte",numchild="0"},{cidr-id="10",name="v10",exp="[7]",value="0",type="std::byte",numchild="0"}],has_more="0"
+0^done
+(gdb) 
+118^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x0000555555555326",func="IImpl::testB",args=[{name="this",value="0x7fffffffe53f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="27",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="5"
+(gdb) 
+119^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 15771)",name="binary",frame={level="0",addr="0x0000555555555326",func="IImpl::testB",args=[{name="this",value="0x7fffffffe53f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="27",arch="i386:x86-64"},state="stopped",core="5"}]
+(gdb) 
+120^done
+(gdb) 
+121^done,stack=[frame={level="0",addr="0x0000555555555326",func="IImpl::testB",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="27",arch="i386:x86-64"},frame={level="1",addr="0x00005555555551cc",func="iface<IImpl>::testB",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="20",arch="i386:x86-64"},frame={level="2",addr="0x0000555555555179",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="9",arch="i386:x86-64"},frame={level="3",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="4",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="5",addr="0x0000555555555091",func="_start",arch="i386:x86-64"}]
+(gdb) 
+122^done,value="0x7fffffffe500"
+(gdb) 
+123^done,variables=[{name="this"}],filtered="1"
+(gdb) 
+~"type = IImpl * const\n"
+124^done
+(gdb) 
+125^done,cidr-id="0",name="v0",exp="this",value="0x7fffffffe53f",type="IImpl * const",numchild="2"
+0^done
+(gdb) 
+126^done,children=[{cidr-id="1",name="v1",exp="iface<IImpl>",value="{...}",type="iface<IImpl>",numchild="0"},{cidr-id="2",name="v2",exp="storage",dynamic="1",value="{...}",type="std::byte [8]",displayhint="array",has_more="1"}],has_more="0"
+0^done
+(gdb) 
+127^done,children=[{cidr-id="3",name="v3",exp="[0]",value="0",type="std::byte",numchild="0"},{cidr-id="4",name="v4",exp="[1]",value="1",type="std::byte",numchild="0"},{cidr-id="5",name="v5",exp="[2]",value="0",type="std::byte",numchild="0"},{cidr-id="6",name="v6",exp="[3]",value="0",type="std::byte",numchild="0"},{cidr-id="7",name="v7",exp="[4]",value="0",type="std::byte",numchild="0"},{cidr-id="8",name="v8",exp="[5]",value="0",type="std::byte",numchild="0"},{cidr-id="9",name="v9",exp="[6]",value="0",type="std::byte",numchild="0"},{cidr-id="10",name="v10",exp="[7]",value="0",type="std::byte",numchild="0"}],has_more="0"
+0^done
+(gdb) 
+128^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x00005555555551cc",func="iface<IImpl>::testB",args=[{name="this",value="0x7fffffffe53f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="21",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="7"
+(gdb) 
+129^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 15771)",name="binary",frame={level="0",addr="0x00005555555551cc",func="iface<IImpl>::testB",args=[{name="this",value="0x7fffffffe53f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="21",arch="i386:x86-64"},state="stopped",core="7"}]
+(gdb) 
+130^done
+(gdb) 
+131^done,stack=[frame={level="0",addr="0x00005555555551cc",func="iface<IImpl>::testB",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="21",arch="i386:x86-64"},frame={level="1",addr="0x0000555555555179",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="9",arch="i386:x86-64"},frame={level="2",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="3",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="4",addr="0x0000555555555091",func="_start",arch="i386:x86-64"}]
+(gdb) 
+132^done,value="0x7fffffffe520"
+(gdb) 
+133^done,variables=[{name="this"}],filtered="1"
+(gdb) 
+~"type = iface<IImpl> * const\n"
+134^done
+(gdb) 
+135^done,cidr-id="0",name="v0",exp="this",value="0x7fffffffe53f",type="iface<IImpl> * const",numchild="0"
+0^done
+(gdb) 
+136^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x0000555555555179",func="main",args=[],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="12",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="7"
+(gdb) 
+137^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 15771)",name="binary",frame={level="0",addr="0x0000555555555179",func="main",args=[],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="12",arch="i386:x86-64"},state="stopped",core="7"}]
+(gdb) 
+138^done
+(gdb) 
+139^done,stack=[frame={level="0",addr="0x0000555555555179",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="12",arch="i386:x86-64"},frame={level="1",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="2",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="3",addr="0x0000555555555091",func="_start",arch="i386:x86-64"}]
+(gdb) 
+140^done,value="0x7fffffffe540"
+(gdb) 
+141^done,variables=[{name="impl"},{name="mocked"}],filtered="1"
+(gdb) 
+~"type = iface<IImpl>\n"
+142^done
+(gdb) 
+~"type = iface<MockIface>\n"
+143^done
+(gdb) 
+144^done,cidr-id="0",name="v0",exp="impl",value="{...}",type="iface<IImpl>",numchild="0"
+0^done
+(gdb) 
+145^done,cidr-id="1",name="v1",exp="mocked",value="{...}",type="iface<MockIface>",numchild="0"
+0^done
+(gdb) 
+146^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x00005555555551dc",func="iface<MockIface>::testA",args=[{name="this",value="0x7fffffffe53e"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="16",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="7"
+(gdb) 
+147^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 15771)",name="binary",frame={level="0",addr="0x00005555555551dc",func="iface<MockIface>::testA",args=[{name="this",value="0x7fffffffe53e"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="16",arch="i386:x86-64"},state="stopped",core="7"}]
+(gdb) 
+148^done
+(gdb) 
+149^done,stack=[frame={level="0",addr="0x00005555555551dc",func="iface<MockIface>::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="16",arch="i386:x86-64"},frame={level="1",addr="0x0000555555555185",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="12",arch="i386:x86-64"},frame={level="2",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="3",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="4",addr="0x0000555555555091",func="_start",arch="i386:x86-64"}]
+(gdb) 
+150^done,value="0x7fffffffe520"
+(gdb) 
+151^done,variables=[{name="this"}],filtered="1"
+(gdb) 
+~"type = iface<MockIface> * const\n"
+152^done
+(gdb) 
+153^done,cidr-id="0",name="v0",exp="this",value="0x7fffffffe53e",type="iface<MockIface> * const",numchild="0"
+0^done
+(gdb) 
+154^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x00005555555551fc",func="MockIface::testA",args=[],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/mock/MockIface.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/mock/MockIface.cpp",line="5",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="0"
+(gdb) 
+155^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 15771)",name="binary",frame={level="0",addr="0x00005555555551fc",func="MockIface::testA",args=[],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/mock/MockIface.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/mock/MockIface.cpp",line="5",arch="i386:x86-64"},state="stopped",core="0"}]
+(gdb) 
+156^done
+(gdb) 
+157^done,stack=[frame={level="0",addr="0x00005555555551fc",func="MockIface::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/mock/MockIface.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/mock/MockIface.cpp",line="5",arch="i386:x86-64"},frame={level="1",addr="0x00005555555551e1",func="iface<MockIface>::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="16",arch="i386:x86-64"},frame={level="2",addr="0x0000555555555185",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="12",arch="i386:x86-64"},frame={level="3",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="4",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="5",addr="0x0000555555555091",func="_start",arch="i386:x86-64"}]
+(gdb) 
+158^done,value="0x7fffffffe500"
+(gdb) 
+159^done,variables=[{name="__PRETTY_FUNCTION__"}],filtered="0"
+(gdb) 
+~"type = const char [31]\n"
+160^done
+(gdb) 
+161^done,cidr-id="0",name="v0",exp="__PRETTY_FUNCTION__",dynamic="1",value="\"static void MockIface::testA()\"",type="const char [31]",displayhint="array",has_more="1"
+0^done
+(gdb) 
+162^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x0000555555555227",func="MockIface::testA",args=[],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/mock/MockIface.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/mock/MockIface.cpp",line="6",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="0"
+(gdb) 
+163^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 15771)",name="binary",frame={level="0",addr="0x0000555555555227",func="MockIface::testA",args=[],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/mock/MockIface.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/mock/MockIface.cpp",line="6",arch="i386:x86-64"},state="stopped",core="0"}]
+(gdb) 
+164^done
+(gdb) 
+165^done,stack=[frame={level="0",addr="0x0000555555555227",func="MockIface::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/mock/MockIface.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/mock/MockIface.cpp",line="6",arch="i386:x86-64"},frame={level="1",addr="0x00005555555551e1",func="iface<MockIface>::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="16",arch="i386:x86-64"},frame={level="2",addr="0x0000555555555185",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="12",arch="i386:x86-64"},frame={level="3",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="4",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="5",addr="0x0000555555555091",func="_start",arch="i386:x86-64"}]
+(gdb) 
+166^done,value="0x7fffffffe500"
+(gdb) 
+167^done,variables=[{name="__PRETTY_FUNCTION__"}],filtered="0"
+(gdb) 
+~"type = const char [31]\n"
+168^done
+(gdb) 
+169^done,cidr-id="0",name="v0",exp="__PRETTY_FUNCTION__",dynamic="1",value="\"static void MockIface::testA()\"",type="const char [31]",displayhint="array",has_more="1"
+0^done
+(gdb) 
+170^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x00005555555551e1",func="iface<MockIface>::testA",args=[{name="this",value="0x7fffffffe53e"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="17",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="0"
+(gdb) 
+171^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 15771)",name="binary",frame={level="0",addr="0x00005555555551e1",func="iface<MockIface>::testA",args=[{name="this",value="0x7fffffffe53e"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="17",arch="i386:x86-64"},state="stopped",core="0"}]
+(gdb) 
+172^done
+(gdb) 
+173^done,stack=[frame={level="0",addr="0x00005555555551e1",func="iface<MockIface>::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="17",arch="i386:x86-64"},frame={level="1",addr="0x0000555555555185",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="12",arch="i386:x86-64"},frame={level="2",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="3",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="4",addr="0x0000555555555091",func="_start",arch="i386:x86-64"}]
+(gdb) 
+174^done,value="0x7fffffffe520"
+(gdb) 
+175^done,variables=[{name="this"}],filtered="1"
+(gdb) 
+~"type = iface<MockIface> * const\n"
+176^done
+(gdb) 
+177^done,cidr-id="0",name="v0",exp="this",value="0x7fffffffe53e",type="iface<MockIface> * const",numchild="0"
+0^done
+(gdb) 
+178^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x0000555555555185",func="main",args=[],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="13",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="0"
+(gdb) 
+179^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 15771)",name="binary",frame={level="0",addr="0x0000555555555185",func="main",args=[],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="13",arch="i386:x86-64"},state="stopped",core="0"}]
+(gdb) 
+180^done
+(gdb) 
+181^done,stack=[frame={level="0",addr="0x0000555555555185",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="13",arch="i386:x86-64"},frame={level="1",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="2",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="3",addr="0x0000555555555091",func="_start",arch="i386:x86-64"}]
+(gdb) 
+182^done,value="0x7fffffffe540"
+(gdb) 
+183^done,variables=[{name="impl"},{name="mocked"}],filtered="1"
+(gdb) 
+~"type = iface<IImpl>\n"
+184^done
+(gdb) 
+~"type = iface<MockIface>\n"
+185^done
+(gdb) 
+186^done,cidr-id="0",name="v0",exp="impl",value="{...}",type="iface<IImpl>",numchild="0"
+0^done
+(gdb) 
+187^done,cidr-id="1",name="v1",exp="mocked",value="{...}",type="iface<MockIface>",numchild="0"
+0^done
+(gdb) 
+188^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x00005555555551f0",func="iface<MockIface>::testB",args=[{name="this",value="0x7fffffffe53e"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="20",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="5"
+(gdb) 
+189^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 15771)",name="binary",frame={level="0",addr="0x00005555555551f0",func="iface<MockIface>::testB",args=[{name="this",value="0x7fffffffe53e"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="20",arch="i386:x86-64"},state="stopped",core="5"}]
+(gdb) 
+190^done
+(gdb) 
+191^done,stack=[frame={level="0",addr="0x00005555555551f0",func="iface<MockIface>::testB",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="20",arch="i386:x86-64"},frame={level="1",addr="0x0000555555555191",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="13",arch="i386:x86-64"},frame={level="2",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="3",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="4",addr="0x0000555555555091",func="_start",arch="i386:x86-64"}]
+(gdb) 
+192^done,value="0x7fffffffe520"
+(gdb) 
+193^done,variables=[{name="this"}],filtered="1"
+(gdb) 
+~"type = iface<MockIface> * const\n"
+194^done
+(gdb) 
+195^done,cidr-id="0",name="v0",exp="this",value="0x7fffffffe53e",type="iface<MockIface> * const",numchild="0"
+0^done
+(gdb) 
+196^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x000055555555522e",func="MockIface::testB",args=[],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/mock/MockIface.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/mock/MockIface.cpp",line="9",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="5"
+(gdb) 
+197^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 15771)",name="binary",frame={level="0",addr="0x000055555555522e",func="MockIface::testB",args=[],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/mock/MockIface.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/mock/MockIface.cpp",line="9",arch="i386:x86-64"},state="stopped",core="5"}]
+(gdb) 
+198^done
+(gdb) 
+199^done,stack=[frame={level="0",addr="0x000055555555522e",func="MockIface::testB",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/mock/MockIface.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/mock/MockIface.cpp",line="9",arch="i386:x86-64"},frame={level="1",addr="0x00005555555551f5",func="iface<MockIface>::testB",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="20",arch="i386:x86-64"},frame={level="2",addr="0x0000555555555191",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="13",arch="i386:x86-64"},frame={level="3",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="4",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="5",addr="0x0000555555555091",func="_start",arch="i386:x86-64"}]
+(gdb) 
+200^done,value="0x7fffffffe500"
+(gdb) 
+201^done,variables=[{name="__PRETTY_FUNCTION__"}],filtered="0"
+(gdb) 
+~"type = const char [31]\n"
+202^done
+(gdb) 
+203^done,cidr-id="0",name="v0",exp="__PRETTY_FUNCTION__",dynamic="1",value="\"static void MockIface::testB()\"",type="const char [31]",displayhint="array",has_more="1"
+0^done
+(gdb) 
+&"kill\n"
+~"Kill the program being debugged? (y or n) [answered Y; input not from terminal]\n"
+=thread-exited,id="1",group-id="i1"
+=thread-group-exited,id="i1"
+~"[Inferior 1 (process 15771) killed]\n"
+204^done
+(gdb) 
+205^exit
+=cmd-param-changed,param="logging enabled",value="on"
+=cmd-param-changed,param="logging file",value="/tmp/gdb.txt"
+(gdb) 
+&"python import gdb; print(gdb.VERSION);\n"
+~"15.2\n"
+1^done
+(gdb) 
+2^done
+(gdb) 
+3^done
+(gdb) 
+4^done
+(gdb) 
+5^done
+(gdb) 
+6^done
+(gdb) 
+7^done
+(gdb) 
+8^done
+(gdb) 
+9^done
+(gdb) 
+10^done
+(gdb) 
+11^done
+(gdb) 
+12^done,value="off"
+(gdb) 
+&"handle SIGSTOP stop nopass\n"
+~"Signal        Stop\tPrint\tPass to program\tDescription\n"
+~"SIGSTOP       Yes\tYes\tNo\t\tStopped (signal)\n"
+13^done
+(gdb) 
+&"info pretty-printer\n"
+~"global pretty-printers:\n"
+~"  builtin\n"
+~"    mpx_bound128\n"
+14^done
+(gdb) 
+&"python import sys; sys.dont_write_bytecode = True; sys.path.insert(0, \"/opt/clion/clion-2024.3.4/bin/gdb/renderers\"); from default.printers import register_default_printers; register_default_printers(None); from libstdcxx.v6.printers import register_libstdcxx_printers; register_libstdcxx_printers(None); from default.libstdcxx_printers import patch_libstdcxx_printers_module; patch_libstdcxx_printers_module(); \n"
+15^done
+(gdb) 
+16^done
+(gdb) 
+&"python from default.commands import register_commands; register_commands();\n"
+17^done
+(gdb) 
+18^done
+(gdb) 
+19^done,bkpt={number="1",type="breakpoint",disp="keep",enabled="y",addr="0x0000000000001182",func="main()",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="7",thread-groups=["i1"],times="0",original-location="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp:7"}
+(gdb) 
+20^done,bkpt={number="2",type="breakpoint",disp="keep",enabled="y",addr="0x00000000000014a0",func="IImpl::IImpl()",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="14",thread-groups=["i1"],times="0",original-location="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp:13"}
+(gdb) 
+21^done
+(gdb) 
+22^done
+(gdb) 
+23^done
+(gdb) 
+24^done
+(gdb) 
+&"maintenance info sections\n"
+~"Exec file: `/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/cmake-build-debug/binary', file type elf64-x86-64.\n"
+~" [0]      0x00000350->0x00000370 at 0x00000350: .note.gnu.property ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [1]      0x00000370->0x00000394 at 0x00000370: .note.gnu.build-id ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [2]      0x00000394->0x000003b0 at 0x00000394: .interp ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [3]      0x000003b0->0x000003d8 at 0x000003b0: .gnu.hash ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [4]      0x000003d8->0x00000540 at 0x000003d8: .dynsym ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [5]      0x00000540->0x000006f8 at 0x00000540: .dynstr ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [6]      0x000006f8->0x00000716 at 0x000006f8: .gnu.version ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [7]      0x00000718->0x000007a8 at 0x00000718: .gnu.version_r ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [8]      0x000007a8->0x000008b0 at 0x000007a8: .rela.dyn ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [9]      0x000008b0->0x00000928 at 0x000008b0: .rela.plt ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [10]     0x00001000->0x00001017 at 0x00001000: .init ALLOC LOAD READONLY CODE HAS_CONTENTS\n"
+~" [11]     0x00001020->0x00001080 at 0x00001020: .plt ALLOC LOAD READONLY CODE HAS_CONTENTS\n"
+~" [12]     0x00001080->0x00001088 at 0x00001080: .plt.got ALLOC LOAD READONLY CODE HAS_CONTENTS\n"
+~" [13]     0x00001090->0x000018ea at 0x00001090: .text ALLOC LOAD READONLY CODE HAS_CONTENTS\n"
+~" [14]     0x000018ec->0x000018f5 at 0x000018ec: .fini ALLOC LOAD READONLY CODE HAS_CONTENTS\n"
+~" [15]     0x00002000->0x000021eb at 0x00002000: .rodata ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [16]     0x000021ec->0x000022f0 at 0x000021ec: .eh_frame_hdr ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [17]     0x000022f0->0x0000273c at 0x000022f0: .eh_frame ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [18]     0x0000273c->0x0000277e at 0x0000273c: .gcc_except_table ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [19]     0x00002780->0x000027a0 at 0x00002780: .note.ABI-tag ALLOC LOAD READONLY DATA HAS_CONTENTS\n"
+~" [20]     0x00003da8->0x00003db0 at 0x00002da8: .init_array ALLOC LOAD DATA HAS_CONTENTS\n"
+~" [21]     0x00003db0->0x00003db8 at 0x00002db0: .fini_array ALLOC LOAD DATA HAS_CONTENTS\n"
+~" [22]     0x00003db8->0x00003fb8 at 0x00002db8: .dynamic ALLOC LOAD DATA HAS_CONTENTS\n"
+~" [23]     0x00003fb8->0x00003fe8 at 0x00002fb8: .got ALLOC LOAD DATA HAS_CONTENTS\n"
+~" [24]     0x00003fe8->0x00004028 at 0x00002fe8: .got.plt ALLOC LOAD DATA HAS_CONTENTS\n"
+~" [25]     0x00004028->0x00004040 at 0x00003028: .data ALLOC LOAD DATA HAS_CONTENTS\n"
+~" [26]     0x00004040->0x00004158 at 0x00003040: .bss ALLOC\n"
+~" [27]     0x00000000->0x0000001e at 0x00003040: .comment READONLY HAS_CONTENTS\n"
+~" [28]     0x00000000->0x000001d0 at 0x0000305e: .debug_aranges READONLY HAS_CONTENTS\n"
+~" [29]     0x00000000->0x00015130 at 0x0000322e: .debug_info READONLY HAS_CONTENTS\n"
+~" [30]     0x00000000->0x0000207f at 0x0001835e: .debug_abbrev READONLY HAS_CONTENTS\n"
+~" [31]     0x00000000->0x000009d8 at 0x0001a3dd: .debug_line READONLY HAS_CONTENTS\n"
+~" [32]     0x00000000->0x00006c2c at 0x0001adb5: .debug_str READONLY HAS_CONTENTS\n"
+~" [33]     0x00000000->0x00000710 at 0x000219e1: .debug_line_str READONLY HAS_CONTENTS\n"
+~" [34]     0x00000000->0x000000ee at 0x000220f1: .debug_rnglists READONLY HAS_CONTENTS\n"
+25^done
+(gdb) 
+26^done
+(gdb) 
+=thread-group-started,id="i1",pid="19863"
+=thread-created,id="1",group-id="i1"
+=breakpoint-modified,bkpt={number="1",type="breakpoint",disp="keep",enabled="y",addr="0x0000555555555182",func="main()",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="7",thread-groups=["i1"],times="0",original-location="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp:7"}
+=breakpoint-modified,bkpt={number="2",type="breakpoint",disp="keep",enabled="y",addr="0x00005555555554a0",func="IImpl::IImpl()",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="14",thread-groups=["i1"],times="0",original-location="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp:13"}
+=library-loaded,id="/lib64/ld-linux-x86-64.so.2",target-name="/lib64/ld-linux-x86-64.so.2",host-name="/lib64/ld-linux-x86-64.so.2",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7fc8000",to="0x00007ffff7fef2d1"}]
+27^running
+*running,thread-id="all"
+(gdb) 
+=library-loaded,id="/lib/x86_64-linux-gnu/libstdc++.so.6",target-name="/lib/x86_64-linux-gnu/libstdc++.so.6",host-name="/lib/x86_64-linux-gnu/libstdc++.so.6",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7ca6280",to="0x00007ffff7dd1b2e"}]
+=library-loaded,id="/lib/x86_64-linux-gnu/libgcc_s.so.1",target-name="/lib/x86_64-linux-gnu/libgcc_s.so.1",host-name="/lib/x86_64-linux-gnu/libgcc_s.so.1",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7f793c0",to="0x00007ffff7f9b865"}]
+=library-loaded,id="/lib/x86_64-linux-gnu/libc.so.6",target-name="/lib/x86_64-linux-gnu/libc.so.6",host-name="/lib/x86_64-linux-gnu/libc.so.6",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7a32400",to="0x00007ffff7b9617d"}]
+=library-loaded,id="/lib/x86_64-linux-gnu/libm.so.6",target-name="/lib/x86_64-linux-gnu/libm.so.6",host-name="/lib/x86_64-linux-gnu/libm.so.6",symbols-loaded="0",thread-group="i1",ranges=[{from="0x00007ffff7e962c0",to="0x00007ffff7f12dc6"}]
+~"[Thread debugging using libthread_db enabled]\n"
+~"Using host libthread_db library \"/lib/x86_64-linux-gnu/libthread_db.so.1\".\n"
+=breakpoint-modified,bkpt={number="1",type="breakpoint",disp="keep",enabled="y",addr="0x0000555555555182",func="main()",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="7",thread-groups=["i1"],times="1",original-location="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp:7"}
+~"\n"
+~"Breakpoint 1, main () at /home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp:7\n"
+~"7\t    iface<IImpl> impl;\n"
+*stopped,reason="breakpoint-hit",disp="keep",bkptno="1",frame={addr="0x0000555555555182",func="main",args=[],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="7",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="5"
+(gdb) 
+0^done
+(gdb) 
+28^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 19863)",name="binary",frame={level="0",addr="0x0000555555555182",func="main",args=[],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="7",arch="i386:x86-64"},state="stopped",core="5"}]
+(gdb) 
+29^done,value="replay"
+(gdb) 
+30^done
+(gdb) 
+31^done
+(gdb) 
+32^done,value="att"
+(gdb) 
+33^done
+(gdb) 
+34^done,value="auto"
+(gdb) 
+~"The target architecture is set to \"auto\" (currently \"i386:x86-64\").\n"
+35^done
+(gdb) 
+36^done,register-names=["rax","rbx","rcx","rdx","rsi","rdi","rbp","rsp","r8","r9","r10","r11","r12","r13","r14","r15","rip","eflags","cs","ss","ds","es","fs","gs","st0","st1","st2","st3","st4","st5","st6","st7","fctrl","fstat","ftag","fiseg","fioff","foseg","fooff","fop","xmm0","xmm1","xmm2","xmm3","xmm4","xmm5","xmm6","xmm7","xmm8","xmm9","xmm10","xmm11","xmm12","xmm13","xmm14","xmm15","mxcsr","ymm0h","ymm1h","ymm2h","ymm3h","ymm4h","ymm5h","ymm6h","ymm7h","ymm8h","ymm9h","ymm10h","ymm11h","ymm12h","ymm13h","ymm14h","ymm15h","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","fs_base","gs_base","orig_rax","al","bl","cl","dl","sil","dil","bpl","spl","r8l","r9l","r10l","r11l","r12l","r13l","r14l","r15l","ah","bh","ch","dh","ax","bx","cx","dx","si","di","bp","","r8w","r9w","r10w","r11w","r12w","r13w","r14w","r15w","eax","ebx","ecx","edx","esi","edi","ebp","esp","r8d","r9d","r10d","r11d","r12d","r13d","r14d","r15d","ymm0","ymm1","ymm2","ymm3","ymm4","ymm5","ymm6","ymm7","ymm8","ymm9","ymm10","ymm11","ymm12","ymm13","ymm14","ymm15"]
+(gdb) 
+37^done,stack=[frame={level="0",addr="0x0000555555555182",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="7",arch="i386:x86-64"},frame={level="1",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="2",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="3",addr="0x00005555555550b1",func="_start",arch="i386:x86-64"}]
+(gdb) 
+38^done,value="0x7fffffffe540"
+(gdb) 
+39^done,variables=[],filtered="1"
+(gdb) 
+40^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x00005555555552ae",func="iface<IImpl>::iface",args=[{name="this",value="0x7fffffffe52f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/../iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="10",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="5"
+(gdb) 
+41^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 19863)",name="binary",frame={level="0",addr="0x00005555555552ae",func="iface<IImpl>::iface",args=[{name="this",value="0x7fffffffe52f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/../iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="10",arch="i386:x86-64"},state="stopped",core="5"}]
+(gdb) 
+42^done
+(gdb) 
+43^done,stack=[frame={level="0",addr="0x00005555555552ae",func="iface<IImpl>::iface",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/../iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="10",arch="i386:x86-64"},frame={level="1",addr="0x000055555555518e",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="7",arch="i386:x86-64"},frame={level="2",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="3",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="4",addr="0x00005555555550b1",func="_start",arch="i386:x86-64"}]
+(gdb) 
+44^done,value="0x7fffffffe510"
+(gdb) 
+45^done,variables=[{name="this"}],filtered="1"
+(gdb) 
+~"type = iface<IImpl> * const\n"
+46^done
+(gdb) 
+47^done,cidr-id="0",name="v0",exp="this",value="0x7fffffffe52f",type="iface<IImpl> * const",numchild="0"
+0^done
+(gdb) 
+48^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x00005555555552d9",func="iface<IImpl>::iface",args=[{name="this",value="0x7fffffffe52f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/../iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="11",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="7"
+(gdb) 
+49^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 19863)",name="binary",frame={level="0",addr="0x00005555555552d9",func="iface<IImpl>::iface",args=[{name="this",value="0x7fffffffe52f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/../iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="11",arch="i386:x86-64"},state="stopped",core="7"}]
+(gdb) 
+50^done
+(gdb) 
+51^done,stack=[frame={level="0",addr="0x00005555555552d9",func="iface<IImpl>::iface",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/../iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="11",arch="i386:x86-64"},frame={level="1",addr="0x000055555555518e",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="7",arch="i386:x86-64"},frame={level="2",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="3",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="4",addr="0x00005555555550b1",func="_start",arch="i386:x86-64"}]
+(gdb) 
+52^done,value="0x7fffffffe510"
+(gdb) 
+53^done,variables=[{name="this"}],filtered="1"
+(gdb) 
+~"type = iface<IImpl> * const\n"
+54^done
+(gdb) 
+55^done,cidr-id="0",name="v0",exp="this",value="0x7fffffffe52f",type="iface<IImpl> * const",numchild="0"
+0^done
+(gdb) 
+56^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x000055555555518e",func="main",args=[],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="3"
+(gdb) 
+57^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 19863)",name="binary",frame={level="0",addr="0x000055555555518e",func="main",args=[],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",arch="i386:x86-64"},state="stopped",core="3"}]
+(gdb) 
+58^done
+(gdb) 
+59^done,stack=[frame={level="0",addr="0x000055555555518e",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",arch="i386:x86-64"},frame={level="1",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="2",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="3",addr="0x00005555555550b1",func="_start",arch="i386:x86-64"}]
+(gdb) 
+60^done,value="0x7fffffffe540"
+(gdb) 
+61^done,variables=[{name="impl"}],filtered="1"
+(gdb) 
+~"type = iface<IImpl>\n"
+62^done
+(gdb) 
+63^done,cidr-id="0",name="v0",exp="impl",value="{...}",type="iface<IImpl>",numchild="0"
+0^done
+(gdb) 
+64^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x0000555555555322",func="iface<IImpl>::testA",args=[{name="this",value="0x7fffffffe52f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="24",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="3"
+(gdb) 
+65^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 19863)",name="binary",frame={level="0",addr="0x0000555555555322",func="iface<IImpl>::testA",args=[{name="this",value="0x7fffffffe52f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="24",arch="i386:x86-64"},state="stopped",core="3"}]
+(gdb) 
+66^done
+(gdb) 
+67^done,stack=[frame={level="0",addr="0x0000555555555322",func="iface<IImpl>::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="24",arch="i386:x86-64"},frame={level="1",addr="0x000055555555519a",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",arch="i386:x86-64"},frame={level="2",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="3",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="4",addr="0x00005555555550b1",func="_start",arch="i386:x86-64"}]
+(gdb) 
+68^done,value="0x7fffffffe510"
+(gdb) 
+69^done,variables=[{name="this"}],filtered="1"
+(gdb) 
+~"type = iface<IImpl> * const\n"
+70^done
+(gdb) 
+71^done,cidr-id="0",name="v0",exp="this",value="0x7fffffffe52f",type="iface<IImpl> * const",numchild="0"
+0^done
+(gdb) 
+72^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x00005555555555ac",func="IImpl::testA",args=[{name="this",value="0x7fffffffe52f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="24",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="3"
+(gdb) 
+73^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 19863)",name="binary",frame={level="0",addr="0x00005555555555ac",func="IImpl::testA",args=[{name="this",value="0x7fffffffe52f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="24",arch="i386:x86-64"},state="stopped",core="3"}]
+(gdb) 
+74^done
+(gdb) 
+75^done,stack=[frame={level="0",addr="0x00005555555555ac",func="IImpl::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="24",arch="i386:x86-64"},frame={level="1",addr="0x000055555555532e",func="iface<IImpl>::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="24",arch="i386:x86-64"},frame={level="2",addr="0x000055555555519a",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",arch="i386:x86-64"},frame={level="3",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="4",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="5",addr="0x00005555555550b1",func="_start",arch="i386:x86-64"}]
+(gdb) 
+76^done,value="0x7fffffffe4f0"
+(gdb) 
+77^done,variables=[{name="this"}],filtered="1"
+(gdb) 
+~"type = IImpl * const\n"
+78^done
+(gdb) 
+79^done,cidr-id="0",name="v0",exp="this",value="0x7fffffffe52f",type="IImpl * const",numchild="2"
+0^done
+(gdb) 
+80^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x0000555555555710",func="IImpl::GetImpl",args=[{name="this",value="0x7fffffffe52f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="9",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="3"
+(gdb) 
+81^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 19863)",name="binary",frame={level="0",addr="0x0000555555555710",func="IImpl::GetImpl",args=[{name="this",value="0x7fffffffe52f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="9",arch="i386:x86-64"},state="stopped",core="3"}]
+(gdb) 
+82^done
+(gdb) 
+83^done,stack=[frame={level="0",addr="0x0000555555555710",func="IImpl::GetImpl",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="9",arch="i386:x86-64"},frame={level="1",addr="0x00005555555555b8",func="IImpl::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="24",arch="i386:x86-64"},frame={level="2",addr="0x000055555555532e",func="iface<IImpl>::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="24",arch="i386:x86-64"},frame={level="3",addr="0x000055555555519a",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",arch="i386:x86-64"},frame={level="4",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="5",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="6",addr="0x00005555555550b1",func="_start",arch="i386:x86-64"}]
+(gdb) 
+84^done,value="0x7fffffffe4d0"
+(gdb) 
+85^done,variables=[{name="this"}],filtered="1"
+(gdb) 
+~"type = IImpl * const\n"
+86^done
+(gdb) 
+87^done,cidr-id="0",name="v0",exp="this",value="0x7fffffffe52f",type="IImpl * const",numchild="2"
+0^done
+(gdb) 
+88^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x0000555555555726",func="std::launder<IImpl::impl>",args=[{name="__p",value="0x7fffffffe52f"}],file="/usr/include/c++/14/new",fullname="/usr/include/c++/14/new",line="198",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="5"
+(gdb) 
+89^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 19863)",name="binary",frame={level="0",addr="0x0000555555555726",func="std::launder<IImpl::impl>",args=[{name="__p",value="0x7fffffffe52f"}],file="/usr/include/c++/14/new",fullname="/usr/include/c++/14/new",line="198",arch="i386:x86-64"},state="stopped",core="5"}]
+(gdb) 
+90^done
+(gdb) 
+91^done,stack=[frame={level="0",addr="0x0000555555555726",func="std::launder<IImpl::impl>",file="/usr/include/c++/14/new",fullname="/usr/include/c++/14/new",line="198",arch="i386:x86-64"},frame={level="1",addr="0x000055555555571c",func="IImpl::GetImpl",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="9",arch="i386:x86-64"},frame={level="2",addr="0x00005555555555b8",func="IImpl::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="24",arch="i386:x86-64"},frame={level="3",addr="0x000055555555532e",func="iface<IImpl>::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="24",arch="i386:x86-64"},frame={level="4",addr="0x000055555555519a",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",arch="i386:x86-64"},frame={level="5",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="6",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="7",addr="0x00005555555550b1",func="_start",arch="i386:x86-64"}]
+(gdb) 
+92^done,value="0x7fffffffe4b0"
+(gdb) 
+93^done,variables=[{name="__p"}],filtered="1"
+(gdb) 
+~"type = IImpl::impl *\n"
+94^done
+(gdb) 
+95^done,cidr-id="0",name="v0",exp="__p",value="0x7fffffffe52f",type="IImpl::impl *",numchild="2"
+0^done
+(gdb) 
+96^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x000055555555571c",func="IImpl::GetImpl",args=[{name="this",value="0x7fffffffe52f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="10",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="5"
+(gdb) 
+97^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 19863)",name="binary",frame={level="0",addr="0x000055555555571c",func="IImpl::GetImpl",args=[{name="this",value="0x7fffffffe52f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="10",arch="i386:x86-64"},state="stopped",core="5"}]
+(gdb) 
+98^done
+(gdb) 
+99^done,stack=[frame={level="0",addr="0x000055555555571c",func="IImpl::GetImpl",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="10",arch="i386:x86-64"},frame={level="1",addr="0x00005555555555b8",func="IImpl::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="24",arch="i386:x86-64"},frame={level="2",addr="0x000055555555532e",func="iface<IImpl>::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="24",arch="i386:x86-64"},frame={level="3",addr="0x000055555555519a",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",arch="i386:x86-64"},frame={level="4",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="5",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="6",addr="0x00005555555550b1",func="_start",arch="i386:x86-64"}]
+(gdb) 
+100^done,value="0x7fffffffe4d0"
+(gdb) 
+101^done,variables=[{name="this"}],filtered="1"
+(gdb) 
+~"type = IImpl * const\n"
+102^done
+(gdb) 
+103^done,cidr-id="0",name="v0",exp="this",value="0x7fffffffe52f",type="IImpl * const",numchild="2"
+0^done
+(gdb) 
+104^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x00005555555555c0",func="IImpl::testA",args=[{name="this",value="0x7fffffffe52f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="25",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="4"
+(gdb) 
+105^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 19863)",name="binary",frame={level="0",addr="0x00005555555555c0",func="IImpl::testA",args=[{name="this",value="0x7fffffffe52f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="25",arch="i386:x86-64"},state="stopped",core="4"}]
+(gdb) 
+106^done
+(gdb) 
+107^done,stack=[frame={level="0",addr="0x00005555555555c0",func="IImpl::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/src/IImpl.cpp",line="25",arch="i386:x86-64"},frame={level="1",addr="0x000055555555532e",func="iface<IImpl>::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="24",arch="i386:x86-64"},frame={level="2",addr="0x000055555555519a",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",arch="i386:x86-64"},frame={level="3",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="4",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="5",addr="0x00005555555550b1",func="_start",arch="i386:x86-64"}]
+(gdb) 
+108^done,value="0x7fffffffe4f0"
+(gdb) 
+109^done,variables=[{name="this"}],filtered="1"
+(gdb) 
+~"type = IImpl * const\n"
+110^done
+(gdb) 
+111^done,cidr-id="0",name="v0",exp="this",value="0x7fffffffe52f",type="IImpl * const",numchild="2"
+0^done
+(gdb) 
+112^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x000055555555532e",func="iface<IImpl>::testA",args=[{name="this",value="0x7fffffffe52f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="25",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="4"
+(gdb) 
+113^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 19863)",name="binary",frame={level="0",addr="0x000055555555532e",func="iface<IImpl>::testA",args=[{name="this",value="0x7fffffffe52f"}],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="25",arch="i386:x86-64"},state="stopped",core="4"}]
+(gdb) 
+114^done
+(gdb) 
+115^done,stack=[frame={level="0",addr="0x000055555555532e",func="iface<IImpl>::testA",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/iface/iface.h",line="25",arch="i386:x86-64"},frame={level="1",addr="0x000055555555519a",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="8",arch="i386:x86-64"},frame={level="2",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="3",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="4",addr="0x00005555555550b1",func="_start",arch="i386:x86-64"}]
+(gdb) 
+116^done,value="0x7fffffffe510"
+(gdb) 
+117^done,variables=[{name="this"}],filtered="1"
+(gdb) 
+~"type = iface<IImpl> * const\n"
+118^done
+(gdb) 
+119^done,cidr-id="0",name="v0",exp="this",value="0x7fffffffe52f",type="iface<IImpl> * const",numchild="0"
+0^done
+(gdb) 
+120^running
+*running,thread-id="all"
+(gdb) 
+*stopped,reason="end-stepping-range",frame={addr="0x00005555555551bd",func="main",args=[],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="9",arch="i386:x86-64"},thread-id="1",stopped-threads="all",core="4"
+(gdb) 
+121^done,threads=[{id="1",target-id="Thread 0x7ffff7e84580 (LWP 19863)",name="binary",frame={level="0",addr="0x00005555555551bd",func="main",args=[],file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="9",arch="i386:x86-64"},state="stopped",core="4"}]
+(gdb) 
+122^done
+(gdb) 
+123^done,stack=[frame={level="0",addr="0x00005555555551bd",func="main",file="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",fullname="/home/jza/Documents/local_repos/For-fun./cpp/mocking_fast_pimpl/main.cpp",line="9",arch="i386:x86-64"},frame={level="1",addr="0x00007ffff7a33ca8",func="__libc_start_call_main",file="../sysdeps/nptl/libc_start_call_main.h",fullname="./csu/../sysdeps/nptl/libc_start_call_main.h",line="58",arch="i386:x86-64"},frame={level="2",addr="0x00007ffff7a33d65",func="__libc_start_main_impl",file="../csu/libc-start.c",fullname="./csu/../csu/libc-start.c",line="360",arch="i386:x86-64"},frame={level="3",addr="0x00005555555550b1",func="_start",arch="i386:x86-64"}]
+(gdb) 
+124^done,value="0x7fffffffe540"
+(gdb) 
+125^done,variables=[{name="impl"}],filtered="1"
+(gdb) 
+~"type = iface<IImpl>\n"
+126^done
+(gdb) 
+127^done,cidr-id="0",name="v0",exp="impl",value="{...}",type="iface<IImpl>",numchild="0"
+0^done
+(gdb) 
+&"kill\n"
+~"Kill the program being debugged? (y or n) [answered Y; input not from terminal]\n"
+=thread-exited,id="1",group-id="i1"
+=thread-group-exited,id="i1"
+~"[Inferior 1 (process 19863) killed]\n"
+128^done
+(gdb) 
+129^exit
